@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ShareableService} from "./services/shareable.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DejaVu';
+
+  constructor(public _shareService:ShareableService) {
+  }
+
 }

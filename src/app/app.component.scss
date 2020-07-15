@@ -1,0 +1,17 @@
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.sidenav {
+  display: flex;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  @media (max-width: 480px) {
+    width: 55vw;
+  }
+  background: #F4F4F4;
+}
