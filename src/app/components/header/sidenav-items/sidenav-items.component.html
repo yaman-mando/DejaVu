@@ -1,0 +1,36 @@
+<div class="non-user" style="display: none">
+  <img  src="../assets/images/Icon.svg" alt=""/>
+  <span>DejaVu</span>
+</div>
+<div class="user">
+  <img src="../assets/images/yaman.jpg" alt=""/>
+  <span>Yaman</span>
+</div>
+<mat-divider></mat-divider>
+<mat-nav-list fxLayout="column" class="navigation">
+  <ng-container *ngFor="let menuitem of getMenuItems() index as i">
+    <mat-list-item *ngIf="i < 3" >
+      <a  class="relative" [routerLink]="['/'+menuitem.link]" routerLinkActive="active-link">
+        <mat-icon>{{ menuitem.icon }}</mat-icon>
+        <span>{{ menuitem.name}}</span>
+      </a>
+    </mat-list-item>
+  </ng-container>
+  <mat-divider></mat-divider>
+  <ng-container>
+    <mat-list-item *ngFor="let menuitem of getAdminItems()" >
+      <a  class="relative" [routerLink]="['/'+menuitem.link]" routerLinkActive="active-link">
+        <mat-icon>{{ menuitem.icon }}</mat-icon>
+        <span>{{ menuitem.name}}</span>
+      </a>
+    </mat-list-item>
+  </ng-container>
+  <div class="navFooter">
+    <div hidden>
+      <a mat-stroked-button [routerLink]="['/login']">Login</a>
+    </div>
+    <div>
+      <a mat-stroked-button>LogOut</a>
+    </div>
+  </div>
+</mat-nav-list>
