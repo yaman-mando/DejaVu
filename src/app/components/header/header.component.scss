@@ -1,0 +1,125 @@
+@import "src/styles/variables";
+
+.header {
+  .header-bottom {
+    &.xl {
+      @media (max-width: 960px) {
+        display: none;
+      }
+      background: #fff;
+      box-shadow: 0 3px 6px #00000005;
+
+      .header-bottom-inner {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .logo-site {
+          flex: .1
+        }
+
+        .menu-site {
+          flex: .75
+        }
+
+        .header-right-side {
+          flex: .25;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          .search {
+            input {
+              background: rgba(255, 255, 255, 0.27);
+
+              border: 1px solid #1A1A27;
+              opacity: 0.74;
+              width: 93%;
+              height: 30px;
+              border-radius: 6px;
+              color: black;
+              padding-left: 2.5rem;
+            }
+
+            input::-webkit-input-placeholder {
+              color: #1A1A27;
+            }
+
+            input:-moz-placeholder {
+              color: #1A1A27;
+            }
+
+            form {
+              display: flex;
+              position: relative;
+              align-items: center;
+
+              &:before {
+                font-family: 'Material Icons', serif;
+                content: "search";
+                position: absolute;
+                left: 10px;
+              }
+            }
+          }
+        }
+
+        @media (max-width: 1280px) {
+          .logo-site {
+            flex: .1
+          }
+          .menu-site {
+            flex: .65
+          }
+          .header-right-side {
+            flex: .35
+          }
+        }
+      }
+    }
+  }
+
+  .app-nav {
+    .app-nav-list>li a {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 64px;
+      padding: 0 15px;
+      display: block;
+      color: #000;
+    }
+  }
+
+  //Responsive bar
+  .responsive-bar{
+    @media(min-width:960px){display: none !important;}
+    background: $primary;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    .nav-menu{flex: .1};
+    .logo-site{flex: .5;
+      img{width:auto;
+        height: 40px;
+        @media (max-width: 400px) {
+          height: 30px
+        }
+      }
+    };
+    .right-side{
+      flex: .4;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      a{color: #000}
+      button{background: transparent}
+    }
+    .responsive-toggle.mat-icon-button{
+      background: transparent;
+      color:$main-nav-color-hover;
+      align-self: center;
+    }
+  }
+
+}
