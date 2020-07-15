@@ -51,20 +51,23 @@
       <a class="nav-link" [routerLink]="['/']">
         <span class="material-icons material-icons-outlined">refresh</span>
       </a>
-      <button type="button" mat-mini-fab>
+      <div class="search-box-bar">
+      <button type="button" mat-mini-fab (click)="toggleSearch()">
         <i class="material-icons">search</i>
       </button>
+        <div [hidden]="searchOpen" class="search-form">
+          <form>
+            <input type="text" placeholder="Search and hit enter">
+            <button type="button" mat-fab class="close-btn" (click)="toggleSearch()">
+              <i class="material-icons">
+                close
+              </i>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </mat-toolbar-row>
     <!--search-->
-    <div [hidden]="true" class="search-form">
-      <form>
-        <input type="text" placeholder="Search and hit enter">
-        <button type="button" mat-fab class="close-btn">
-          <i class="material-icons">
-            close
-          </i>
-        </button>
-      </form>
-    </div>
+
 </mat-toolbar>

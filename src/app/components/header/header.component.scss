@@ -122,4 +122,55 @@
     }
   }
 
+
+  //----Search Form
+  .search-box {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+  }
+
+  .search-form {
+    position: absolute;
+    right: 0;
+    left: 0;
+    background: #fff;
+    z-index: 9999;
+    top: 0;
+    transition: all 0.3s ease;
+    bottom: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    //visibility: hidden;
+
+    input {
+      width: 100%;
+      color: $font-color;
+      padding: 0 1rem;
+      border: 0;
+      font-size: 1.2rem;
+      height: 64px;
+    }
+  }
+
+  .form-open {
+    .search-box {
+
+    }
+
+    .search-form {
+      opacity: 1;
+      visibility: visible;
+      //overflow: hidden;
+    }
+  }
+
+  .close-btn {
+    position: absolute !important;
+    right: 0;
+    background: #fff !important;
+    box-shadow: none !important;
+    color: $font-color !important;
+  }
+
 }
