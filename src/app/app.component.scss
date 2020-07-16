@@ -1,3 +1,5 @@
+@import "./src/styles";
+
 .container {
   position: absolute;
   left: 0;
@@ -13,5 +15,5 @@
   @media (max-width: 480px) {
     width: 55vw;
   }
-  background: #F4F4F4;
+  background: $app-primary-bg;
 }
