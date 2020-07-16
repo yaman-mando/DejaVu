@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import "./src/styles";
 
 .header {
   .header-bottom {
@@ -6,8 +6,8 @@
       @media (max-width: 960px) {
         display: none;
       }
-      background: #fff;
-      box-shadow: 0 3px 6px #00000005;
+      background: $app-white;
+      box-shadow: 0 3px 6px $app-shadow-black;
 
       .header-bottom-inner {
         display: flex;
@@ -32,21 +32,21 @@
             input {
               background: rgba(255, 255, 255, 0.27);
 
-              border: 1px solid #1A1A27;
+              border: 1px solid $app-light-black;
               opacity: 0.74;
               width: 93%;
               height: 30px;
               border-radius: 6px;
-              color: black;
+              color: $app-black;
               padding-left: 2.5rem;
             }
 
             input::-webkit-input-placeholder {
-              color: #1A1A27;
+              color: $app-light-black;
             }
 
             input:-moz-placeholder {
-              color: #1A1A27;
+              color: $app-light-black;
             }
 
             form {
@@ -59,8 +59,13 @@
                 content: "search";
                 position: absolute;
                 left: 10px;
+                color: $app-black;
               }
             }
+          }
+
+          .notification{
+            span{color: $app-light-black}
           }
         }
 
@@ -87,14 +92,14 @@
       line-height: 64px;
       padding: 0 15px;
       display: block;
-      color: #000;
+      color: $app-black;
     }
   }
 
   //Responsive bar
   .responsive-bar{
     @media(min-width:960px){display: none !important;}
-    background: $primary;
+    background: $app-white;
     display: flex;
     text-align: center;
     align-items: center;
@@ -112,12 +117,12 @@
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-      a{color: #000}
+      a{color: $app-black}
       button{background: transparent}
     }
     .responsive-toggle.mat-icon-button{
       background: transparent;
-      color:$main-nav-color-hover;
+      color:$app-red;
       align-self: center;
     }
   }
@@ -134,7 +139,7 @@
     position: absolute;
     right: 0;
     left: 0;
-    background: #fff;
+    background: $app-white;
     z-index: 9999;
     top: 0;
     transition: all 0.3s ease;
@@ -145,7 +150,7 @@
 
     input {
       width: 100%;
-      color: $font-color;
+      color: $app-font-color;
       padding: 0 1rem;
       border: 0;
       font-size: 1.2rem;
@@ -168,9 +173,9 @@
   .close-btn {
     position: absolute !important;
     right: 0;
-    background: #fff !important;
+    background: $app-white !important;
     box-shadow: none !important;
-    color: $font-color !important;
+    color: $app-font-color !important;
   }
 
 }

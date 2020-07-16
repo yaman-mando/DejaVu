@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import "./src/styles";
 
 .app-nav {
   .app-nav-list {
@@ -17,21 +17,21 @@
         line-height: 64px;
         padding: 0 15px;
         text-decoration: none;
-        color: $main-nav-color;
+
+        color: $app-light-black;
         &:hover{
-          color: $main-nav-color-hover;
+          color: $app-red;
         }
       }
-
       &:after {
         content: '';
         border-bottom: 5px;
         width: 0;
         transition: all 0.3s ease;
         height: 5px;
-        left: 20px;
         right: 0;
-        background: $main-nav-color-hover;
+        left: 20px;
+        background: $app-red;
         display: block;
         position: absolute;
         bottom: 0;

@@ -8,8 +8,6 @@ import {ShareableService} from "../../services/shareable.service";
 })
 export class HeaderComponent implements OnInit {
 
-  searchOpen: boolean = false;
-
   constructor(public _shareService:ShareableService) { }
 
   ngOnInit() {
@@ -20,7 +18,4 @@ export class HeaderComponent implements OnInit {
     this._shareService.sidenavOpen = !this._shareService.sidenavOpen;
   }
 
-  public toggleSearch() {
-    this.searchOpen = !this.searchOpen
-  }
 }

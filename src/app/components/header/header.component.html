@@ -20,10 +20,10 @@
           </form>
         </div>
         <div class="notification">
-          <a href="!#"><span class="material-icons">notifications</span></a>
+          <a href="#!"><span class="material-icons">notifications</span></a>
         </div>
         <div class="icon-logo">
-          <a href="!#"><img src="../../../assets/images/Icon.svg" width="25" height="25" alt=""/></a>
+          <a href="#!"><img src="../../../assets/images/Icon.svg" width="25" height="25" alt=""/></a>
         </div>
 
       </div>
@@ -51,21 +51,10 @@
       <a class="nav-link" [routerLink]="['/']">
         <span class="material-icons material-icons-outlined">refresh</span>
       </a>
-      <div class="search-box-bar">
-      <button type="button" mat-mini-fab (click)="toggleSearch()">
+
+      <button type="button" mat-mini-fab>
         <i class="material-icons">search</i>
       </button>
-        <div [hidden]="searchOpen" class="search-form">
-          <form>
-            <input type="text" placeholder="Search and hit enter">
-            <button type="button" mat-fab class="close-btn" (click)="toggleSearch()">
-              <i class="material-icons">
-                close
-              </i>
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
   </mat-toolbar-row>
     <!--search-->

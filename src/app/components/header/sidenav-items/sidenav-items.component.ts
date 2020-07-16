@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Menu, MenuItems} from "../../../enums/menuItems.enum";
-import {AdminOption, AdminOptionsList} from "../../../enums/admin-options.enum";
+import {Menu} from "../../../enums/menuItems.enum";
+import {AdminOption} from "../../../enums/admin-options.enum";
+import {TranslateBaseService} from "../../../app-translation/services/translation-base.service";
 
 @Component({
   selector: 'sidenav-items',
@@ -9,19 +10,19 @@ import {AdminOption, AdminOptionsList} from "../../../enums/admin-options.enum";
 })
 export class SidenavItemsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _tb:TranslateBaseService) { }
 
   ngOnInit() {
   }
 
   /*Method for getting menu items form Enum*/
   getMenuItems() : Menu[]{
-    return MenuItems;
+    return this._tb.translate.static.menuItems;
   }
 
   /*Method for getting Admin items form Enum*/
   getAdminItems() : AdminOption[]{
-    return AdminOptionsList;
+    return this._tb.translate.static.adminList;
   }
 
 }

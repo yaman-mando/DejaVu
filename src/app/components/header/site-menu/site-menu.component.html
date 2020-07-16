@@ -6,6 +6,12 @@
         {{item.name}}
         </a>
     </li>
+    <li>
+      <a class="nav-link" routerLink="" (click)="_help.changeLang()">
+        <span class="material-icons material-icons-outlined">g_translate</span>
+        {{_tb.translate.texts.lang}}
+      </a>
+    </li>
   </ul>
   <ul class="app-nav-list sm">
     <li class="app-nav-item" *ngFor="let item of getMenuItems() index as i">

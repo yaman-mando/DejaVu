@@ -1,6 +1,9 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
-import {Menu, MenuItems} from "../../../enums/menuItems.enum";
+import {Menu} from "../../../enums/menuItems.enum";
+import {TranslateService} from "@ngx-translate/core";
+import {TranslateBaseService} from "../../../app-translation/services/translation-base.service";
+import {HelpService} from "../../../services/help.service";
 
 @Component({
   selector: 'siteMenu',
@@ -19,10 +22,14 @@ import {Menu, MenuItems} from "../../../enums/menuItems.enum";
 @Injectable()
 export class SiteMenuComponent{
 
+constructor(public _tb:TranslateBaseService,
+            public _help:HelpService) {
 
+
+}
   /*Method for getting menu items form Enum*/
   getMenuItems() : Menu[]{
-    return MenuItems;
+    return this._tb.translate.static.menuItems
   }
 
 
