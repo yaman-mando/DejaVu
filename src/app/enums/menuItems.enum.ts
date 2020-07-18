@@ -12,8 +12,8 @@ export const MenuItems_EN = [
   {name:'Latest', link:'',icon:'refresh'},
   {name:'home', link:'home',icon:'home'},
   {name:'admin', link:'admin',icon:'admin_panel_settings'},
-  {name:'login', link:'login',icon:'login'},
-  {name:'logout', link:'',icon:'exit_to_app'},
+  {name:'signIn', link:'login',icon:'login'},
+  {name:'signOut', link:'',icon:'exit_to_app'},
 ];
 
 
