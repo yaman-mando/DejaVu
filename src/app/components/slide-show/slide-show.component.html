@@ -1,0 +1,31 @@
+<div class="pt-5">
+  <div class="container"><ngx-slick-carousel class="carousel home-3-slider" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides">
+      <div class="text-center">
+        <div class="relative">
+          <img [src]="slide.img" alt="">
+          <div class="slider-content-v3">
+            <div class="slider-content-v3-inner m-auto">
+              <p class="text-inverse">{{slide.heading_one}}</p>
+              <h4 class="font-bold mb-4 text-inverse">{{slide.content}}</h4>
+              <!-- <h2 class="mb-4 text-inverse">{{slide.heading_two}}</h2> -->
+            </div>
+            <div class="slider-buttons">
+              <div class="example-button-container">
+                <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+              <div class="example-button-container">
+                <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+  </div>
+</div>
