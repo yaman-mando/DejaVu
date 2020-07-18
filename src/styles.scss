@@ -5,6 +5,78 @@
 //app colors
 @import "src/styles/colors";
 
+@import "src/styles/material-theme";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "src/styles/base";
+
+// regular style toast
+@import '~ngx-toastr/toastr';
+
+// bootstrap style toast
+// or import a bootstrap 4 alert styled design (SASS ONLY)
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions
+// if you'd like to use it without importing all of bootstrap it requires
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
+//rating start
+@import '~ngx-bar-rating/themes/br-stars-theme';
+
+
+
+
+//arabic font
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot);
+  src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.ttf) format('truetype')
+}
+
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot);
+  src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.ttf) format('truetype')
+}
+
+//end arabic font
+
+/*LTR font*/
+html, body { height: 100%;margin: 0; }
+html[dir="ltr"] {
+  div,h1,h2,h3,h4,h5,h6,a,input{
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
+  }
+}
+
+/*RTL font*/
+html[dir="rtl"] {
+  div,h1,h2,h3,h4,h5,h6,a,input{
+    font-family: 'Noto Kufi Arabic', serif !important;
+  }
+  * {
+    letter-spacing: 0 !important;
+  }
+}
+
+.toast-warning{
+  background: red !important;
+  @media (max-width: 480px) {
+    width: 98vw !important;
+  }
+  width: 400px !important;
+}
+
+.toast-success{
+  background: green !important;
+  @media (max-width: 480px) {
+    width: 98vw !important;
+  }
+  width: 400px !important;
+}
+
