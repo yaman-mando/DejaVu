@@ -1,0 +1,17 @@
+.container{
+  padding: 30px;
+}
+
+.inner-container{
+  display: grid;
+  align-items: center;
+  height: calc(100% - 64px);
+}
+.sign-in-image {
+  background-image: url("../../../assets/images/Icon.svg");
+  background-size: cover;
+  padding: 20vw 0;
+  @media (max-width: 940px) {
+    display: none;
+  }
+}
