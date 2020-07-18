@@ -19,7 +19,18 @@ export const AR_GLOBE_DATA: typeof EN_GLOBE_DATA = {
       login: 'تسجيل الدخول',
     },
   texts:{
-    lang:'en'
+    lang:'en',
+    search:'بحث',
+    login_msg:'أدخل أي اسم مستخدم و كلمة مرور:123456 لتسجيل الدخول',
+    signIn_title:'تسجيل دخول المستخدم',
+    user_name:'اسم المستخدم',
+    password:'كلمة المرور',
+    signIn:'تسجيل دخول',
+    signOut:'تسجيل خروج',
+    check_email_password: 'يرجى التحقق من البريد الالكتروني او كلمة المرور',
+    SIGNIN_SUCCESS: "تم تسجيل الدخول بنجاح",
+    Management:'إدارة',
+    notifications:'الإشعارات'
   }
 
 };

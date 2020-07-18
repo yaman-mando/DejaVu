@@ -19,7 +19,18 @@ export const EN_GLOBE_DATA = {
     login: 'login',
   },
   texts:{
-    lang:'ar'
+    lang:'ar',
+    search:'Search',
+    login_msg:'Enter Any UserName and Password:123456 To Login',
+    signIn_title:'User Sign In',
+    user_name:'UserName',
+    password:'Password',
+    signIn:'Sign In',
+    signOut:'SignOut',
+    check_email_password: "please check your email and password.",
+    SIGNIN_SUCCESS: "Signin successfully",
+    Management:'MANAGEMENT',
+    notifications:'Notifications'
   }
 
 };
