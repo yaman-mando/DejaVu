@@ -23,8 +23,19 @@ import {LoadingsComponent} from "./components/loadings/loadings.component";
 import {HelpService} from "./services/help.service";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
-import { LoginComponent } from './pages/login/login.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import {ToastrModule} from "ngx-toastr";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {GalleryCollectionComponent} from "./components/gallery-collection/gallery-collection.component";
+import {SlideShowComponent} from "./components/slide-show/slide-show.component";
+import {SlickCarouselModule} from "ngx-slick-carousel";
+import { SlickCategoriesComponent } from './components/slick-categories/slick-categories.component';
+import {BarRatingModule} from "ngx-bar-rating";
+
 
 @NgModule({
   declarations: [
@@ -34,13 +45,15 @@ import { LoginComponent } from './pages/login/login.component';
     HeaderComponent,
     SiteMenuComponent,
     SidenavItemsComponent,
-    AdminPanelComponent,
-    LoginComponent
+    SlideShowComponent,
+    GalleryCollectionComponent,
+    SlickCategoriesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     MatToolbarModule,
     FlexLayoutModule,
     MatButtonModule,
@@ -49,7 +62,15 @@ import { LoginComponent } from './pages/login/login.component';
     MatIconModule,
     TranslateModule.forRoot(),
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatTooltipModule,
+    SlickCarouselModule,
+    BarRatingModule
   ],
   providers: [
     TranslateBaseService,
