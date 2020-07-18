@@ -1,9 +1,9 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {Menu} from "../../../enums/menuItems.enum";
-import {TranslateService} from "@ngx-translate/core";
 import {TranslateBaseService} from "../../../app-translation/services/translation-base.service";
 import {HelpService} from "../../../services/help.service";
+import {AppStorageService} from "../../../app-factory/services/app-storage.service";
 
 @Component({
   selector: 'siteMenu',
@@ -23,13 +23,20 @@ import {HelpService} from "../../../services/help.service";
 export class SiteMenuComponent{
 
 constructor(public _tb:TranslateBaseService,
-            public _help:HelpService) {
-
-
+            public _help:HelpService,
+            public _appStorageService:AppStorageService) {
 }
   /*Method for getting menu items form Enum*/
   getMenuItems() : Menu[]{
     return this._tb.translate.static.menuItems
+  }
+
+  getCurrentRoute() :string{
+     let _url:string;
+    this._help.currentRouter$.subscribe(res=>{
+       _url = res;
+    });
+    return _url
   }
 
 

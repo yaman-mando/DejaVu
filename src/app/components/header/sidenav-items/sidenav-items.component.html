@@ -1,37 +1,64 @@
-<div class="non-user" style="display: none">
+<div class="non-user" *ngIf="!_storage.getUserPreferences().isLoggedIn">
   <img  src="../assets/images/Icon.svg" alt=""/>
   <span class="red-color">DejaVu</span>
 </div>
-<div class="user">
+<div class="user" *ngIf="_storage.getUserPreferences().isLoggedIn">
   <img src="../assets/images/yaman.jpg" alt=""/>
-  <span class="red-color">Yaman</span>
+  <span class="red-color">{{_storage.getUserPreferences().userName |slice :0:15}}
+    <span *ngIf="_storage.getUserPreferences().userName.length>15"> ...</span>
+  </span>
 </div>
 <mat-divider></mat-divider>
 <mat-nav-list fxLayout="column" class="navigation">
-  <ng-container *ngFor="let menuitem of getMenuItems() index as i">
-    <mat-list-item *ngIf="i < 3" >
-      <a  class="relative" [routerLink]="['/'+menuitem.link]" routerLinkActive="active-link">
-        <mat-icon>{{ menuitem.icon }}</mat-icon>
-        <span>{{ menuitem.name}}</span>
+  <!--latest-->
+    <mat-list-item>
+      <a  class="relative" href="javascript:;" routerLinkActive="active-link">
+        <mat-icon>{{ getMenuItems()[0].icon }}</mat-icon>
+        <span>{{ getMenuItems()[0].name}}</span>
       </a>
     </mat-list-item>
-  </ng-container>
+<!--home-->
+  <mat-list-item>
+    <a  class="relative" [routerLink]="['/'+getMenuItems()[1].link]" routerLinkActive="active-link">
+      <mat-icon>{{ getMenuItems()[1].icon }}</mat-icon>
+      <span>{{ getMenuItems()[1].name}}</span>
+    </a>
+  </mat-list-item>
+<!--Admin-->
+  <mat-list-item *ngIf="_storage.getUserPreferences().isLoggedIn">
+    <a  class="relative" (click)="toggleSidebar()" [routerLink]="['/'+getMenuItems()[2].link]" routerLinkActive="active-link">
+      <mat-icon>{{ getMenuItems()[2].icon }}</mat-icon>
+      <span>{{ getMenuItems()[2].name}}</span>
+    </a>
+  </mat-list-item>
+  <!--lang-->
+  <mat-list-item>
+    <a class="relative" style="cursor: pointer" (click)="_help.changeLang()">
+      <mat-icon>g_translate</mat-icon>
+      <span>{{_tb.translate.texts.lang}}</span>
+    </a>
+  </mat-list-item>
+<!--Empty  line-->
   <mat-divider></mat-divider>
   <ng-container>
-    <p class="part-title">MANGEMENT</p>
+
+    <p class="part-title">{{_tb.translate.texts.Management}}</p>
+
     <mat-list-item *ngFor="let menuitem of getAdminItems()" >
-      <a  class="relative" [routerLink]="['/'+menuitem.link]" routerLinkActive="active-link">
+      <a  class="relative" href="javascript:;" routerLinkActive="active-link">
         <mat-icon>{{ menuitem.icon }}</mat-icon>
         <span>{{ menuitem.name}}</span>
       </a>
     </mat-list-item>
   </ng-container>
   <div class="navFooter">
-    <div hidden>
-      <a mat-stroked-button [routerLink]="['/login']">Login</a>
+    <div *ngIf="!_storage.getUserPreferences().isLoggedIn">
+      <a (click)="toggleSidebar()" routerLinkActive="active-link" class="red-color" mat-stroked-button [routerLink]="['/login']">
+        {{_tb.translate.texts.signIn}}
+      </a>
     </div>
-    <div>
-      <a class="red-color" mat-stroked-button>LogOut</a>
+    <div (click)="_help.logOut();toggleSidebar()" *ngIf="_storage.getUserPreferences().isLoggedIn">
+      <a class="red-color" mat-stroked-button>{{_tb.translate.texts.signOut}}</a>
     </div>
   </div>
 </mat-nav-list>
