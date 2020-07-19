@@ -1,9 +1,9 @@
 <div class="non-user" *ngIf="!_storage.getUserPreferences().isLoggedIn">
-  <img  src="../assets/images/Icon.svg" alt=""/>
+  <img  src="../../../../../assets/images/Icon.svg" alt=""/>
   <span class="red-color">DejaVu</span>
 </div>
 <div class="user" *ngIf="_storage.getUserPreferences().isLoggedIn">
-  <img src="../assets/images/yaman.jpg" alt=""/>
+  <img src="../../../../../assets/images/yaman.jpg" alt=""/>
   <span class="red-color">{{_storage.getUserPreferences().userName |slice :0:15}}
     <span *ngIf="_storage.getUserPreferences().userName.length>15"> ...</span>
   </span>

@@ -1,54 +1,64 @@
 <mat-toolbar color="primary" class="header">
+
   <!--large Devices Header -->
   <mat-toolbar-row class="header-bottom xl main-menu-wrap">
-
     <div class="header-bottom-inner">
 
       <!--logo-->
       <div class="logo-site">
-        <a [routerLink]="['/']"> <img src="../../../assets/images/Light%20Mode.svg" alt=""> </a>
+        <a [routerLink]="['/']"> <img src="../../../../assets/images/Light%20Mode.svg" alt=""> </a>
       </div>
+
       <!--menu items-->
       <div class="menu-site">
         <siteMenu></siteMenu>
       </div>
+
       <!--Search and Notifications side-->
       <div class="header-right-side">
         <div class="search">
-          <form action="">
-            <input type="text" placeholder="Search">
-          </form>
+          <div class="search-input">
+            <span class="material-icons">search</span>
+            <input type="text" placeholder="{{_tb.translate.texts.search}}">
+          </div>
         </div>
         <div class="notification">
-          <a href="#!"><span class="material-icons">notifications</span></a>
+          <a href="javascript:;" matTooltip="{{_tb.translate.texts.notifications}}"><span class="material-icons">notifications</span></a>
         </div>
-        <div class="icon-logo">
-          <a href="#!"><img src="../../../assets/images/Icon.svg" width="25" height="25" alt=""/></a>
+        <div class="icon-logo" *ngIf="!_storage.getUserPreferences().isLoggedIn" [routerLink]="['/login']">
+          <a href="javascript:;"><img src="../../../../assets/images/Icon.svg" width="25" height="25" alt=""/></a>
+        </div>
+        <div class="icon-logo" *ngIf="_storage.getUserPreferences().isLoggedIn">
+          <img style="border-radius: 50%" src="../../../../assets/images/yaman.jpg" matTooltip="{{_storage.getUserPreferences().userName | slice:0:15}}" width="30" height="30" alt=""/>
         </div>
 
       </div>
+
     </div>
-
   </mat-toolbar-row>
-
   <!--End Large Device Header-->
+
+  <!--Mobile Header-->
   <mat-toolbar-row class="responsive-bar header-bottom sm relative">
+
     <!--nav button-->
     <div class="nav-menu">
       <button class="responsive-toggle" mat-icon-button (click)="toggleSidebar()">
         <i class="material-icons">menu</i>
       </button>
     </div>
+
     <!--logo-->
     <div class="logo-site">
-      <a [routerLink]="['/']"> <img src="../../../assets/images/Light%20Mode.svg" alt=""> </a>
+      <a [routerLink]="['/']"> <img src="../../../../assets/images/Light%20Mode.svg" alt=""> </a>
     </div>
+
     <!--right side buttons-->
     <div class="right-side">
-      <a class="nav-link" [routerLink]="['/home']">
+      <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active-link">
         <span class="material-icons material-icons-outlined">home</span>
       </a>
-      <a class="nav-link" [routerLink]="['/']">
+      <a class="nav-link" href="javascript:;">
         <span class="material-icons material-icons-outlined">refresh</span>
       </a>
 
@@ -56,7 +66,8 @@
         <i class="material-icons">search</i>
       </button>
     </div>
+
   </mat-toolbar-row>
-    <!--search-->
+  <!--End Mobile Header-->
 
 </mat-toolbar>

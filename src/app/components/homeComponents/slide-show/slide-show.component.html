@@ -1,0 +1,17 @@
+<div class="pt-5">
+  <div class="container">
+
+    <ngx-slick-carousel *ngIf="slideShowList.slidesList as slideListData"
+                        class="carousel home-3-slider"
+                        [config]="slideConfig">
+
+      <!--slick items-->
+      <div ngxSlickItem *ngFor="let slide of slideListData">
+        <slideShowItem [slideItem]="slide"></slideShowItem>
+      </div>
+      <!--End slick items-->
+
+    </ngx-slick-carousel>
+
+  </div>
+</div>

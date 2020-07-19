@@ -1,0 +1,13 @@
+<div class="section-gap pt-3 pb-0">
+  <ngx-slick-carousel *ngIf="categoriesList.categoriesList as _CatsData"
+                      class="carousel home-2-slider"
+                      [config]="slideConfig"
+  >
+
+    <!--cartsList-->
+    <div ngxSlickItem *ngFor="let catData of _CatsData">
+      <categoryCard [cardItem]="catData"></categoryCard>
+    </div>
+
+  </ngx-slick-carousel>
+</div>

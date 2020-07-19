@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateBaseService} from "../../app-translation/services/translation-base.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HelpService} from "../../services/help.service";
-import {timeout} from "rxjs/operators";
+import {TranslateBaseService} from "../../../app-translation/services/translation-base.service";
+import {HelpService} from "../../../services/help.service";
+
 
 @Component({
   selector: 'signInForm',

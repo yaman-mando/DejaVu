@@ -1,4 +1,6 @@
 import {Component, Input, OnChanges, OnInit, ViewEncapsulation} from '@angular/core';
+import {WI_SlideShowList} from "../../../interfaces/general.interface";
+
 
 @Component({
   selector: 'slideShow',
@@ -9,23 +11,9 @@ import {Component, Input, OnChanges, OnInit, ViewEncapsulation} from '@angular/c
 export class SlideShowComponent implements OnInit,OnChanges {
 
   @Input() isRTL : boolean = false;
+  @Input() slideShowList:WI_SlideShowList;
 
   slideConfig : any;
-
-  slides : any = [
-    {
-      img         : "../../assets/images/slider/h-slider-4.png",
-      content     : "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.",
-      heading_one : "Image1 Title",
-
-    },
-    {
-      img         : "../../assets/images/slider/h-slider-3.jpg",
-      content     : "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.",
-      heading_one : "Image2 Title",
-
-    },
-  ];
 
   constructor() { }
 

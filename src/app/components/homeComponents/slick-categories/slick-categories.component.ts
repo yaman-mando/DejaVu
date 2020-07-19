@@ -1,4 +1,6 @@
 import {Component, Input, OnChanges, OnInit, ViewEncapsulation} from '@angular/core';
+import {WI_CategoryCardList} from "../../../interfaces/general.interface";
+
 
 @Component({
   selector: 'slickCategories',
@@ -8,49 +10,10 @@ import {Component, Input, OnChanges, OnInit, ViewEncapsulation} from '@angular/c
 })
 export class SlickCategoriesComponent implements OnInit, OnChanges {
 
+  @Input() categoriesList:WI_CategoryCardList;
   @Input() isRTL : any;
 
   slideConfig : any;
-
-
-  slides = [
-    {
-      img: "../../assets/images/categories/cat1.png",
-      title:"Image Title",
-      case_icon:'add',
-      rate:3,
-    },
-    {
-      img: "../../assets/images/categories/cat2.png",
-      title:"Image Title",
-      case_icon:'done',
-      rate:2,
-    },
-    {
-      img: "../../assets/images/categories/cat3.png",
-      title:"Image Title",
-      case_icon:'add',
-      rate:3,
-    },
-    {
-      img: "../../assets/images/categories/cat4.png",
-      title:"Image Title",
-      case_icon:'add',
-      rate:5,
-    },
-    {
-      img: "../../assets/images/categories/cat5.png",
-      title:"Image Title",
-      case_icon:'done',
-      rate:3,
-    },
-    {
-      img: "../../assets/images/categories/cat6.png",
-      title:"Image Title",
-      case_icon:'add',
-      rate:4,
-    },
-  ];
 
   constructor() { }
 

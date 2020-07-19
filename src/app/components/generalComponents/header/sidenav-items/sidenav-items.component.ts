@@ -1,12 +1,11 @@
 import {AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
-import {Menu} from "../../../enums/menuItems.enum";
-import {AdminOption} from "../../../enums/admin-options.enum";
-import {TranslateBaseService} from "../../../app-translation/services/translation-base.service";
-import {Router} from "@angular/router";
-import {HelpService} from "../../../services/help.service";
-import {AppStorageService} from "../../../app-factory/services/app-storage.service";
-import {ShareableService} from "../../../services/shareable.service";
 import {MatListItem} from "@angular/material/list";
+import {ShareableService} from "../../../../services/shareable.service";
+import {TranslateBaseService} from "../../../../app-translation/services/translation-base.service";
+import {AdminOption} from "../../../../enums/admin-options.enum";
+import {Menu} from "../../../../enums/menuItems.enum";
+import {AppStorageService} from "../../../../app-factory/services/app-storage.service";
+import {HelpService} from "../../../../services/help.service";
 
 @Component({
   selector: 'sidenav-items',

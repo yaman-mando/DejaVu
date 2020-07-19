@@ -1,0 +1,32 @@
+<div class="text-center" *ngIf="slideItem as slide">
+  <div class="relative">
+
+    <!--image part-->
+    <img [src]="slide.img" alt="">
+
+    <!--contents part-->
+    <div class="slider-content-v3">
+
+      <div class="slider-content-v3-inner m-auto">
+        <p class="text-inverse">{{slide.title}}</p>
+        <h4 class="font-bold mb-4 text-inverse">{{slide.content}}</h4>
+      </div>
+
+      <div class="slider-buttons">
+        <div class="example-button-container">
+          <button mat-mini-fab color="warn">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <div class="example-button-container">
+          <button mat-mini-fab color="warn">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
