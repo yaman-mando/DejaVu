@@ -30,7 +30,8 @@ export const AR_GLOBE_DATA: typeof EN_GLOBE_DATA = {
     check_email_password: 'يرجى التحقق من البريد الالكتروني او كلمة المرور',
     SIGNIN_SUCCESS: "تم تسجيل الدخول بنجاح",
     Management:'إدارة',
-    notifications:'الإشعارات'
+    notifications:'الإشعارات',
+    category:'التصنيف'
   }
 
 };

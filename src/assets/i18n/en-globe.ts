@@ -21,7 +21,7 @@ export const EN_GLOBE_DATA = {
   texts:{
     lang:'ar',
     search:'Search',
-    login_msg:'Enter Any UserName and Password:123456 To Login',
+    login_msg:'Please Enter Any UserName and Password:123456 To Login',
     signIn_title:'User Sign In',
     user_name:'UserName',
     password:'Password',
@@ -30,7 +30,8 @@ export const EN_GLOBE_DATA = {
     check_email_password: "please check your email and password.",
     SIGNIN_SUCCESS: "Signin successfully",
     Management:'MANAGEMENT',
-    notifications:'Notifications'
+    notifications:'Notifications',
+    category:'Category'
   }
 
 };
