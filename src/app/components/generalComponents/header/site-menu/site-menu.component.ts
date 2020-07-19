@@ -1,9 +1,9 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
-import {Menu} from "../../../enums/menuItems.enum";
-import {TranslateBaseService} from "../../../app-translation/services/translation-base.service";
-import {HelpService} from "../../../services/help.service";
-import {AppStorageService} from "../../../app-factory/services/app-storage.service";
+import {TranslateBaseService} from "../../../../app-translation/services/translation-base.service";
+import {Menu} from "../../../../enums/menuItems.enum";
+import {AppStorageService} from "../../../../app-factory/services/app-storage.service";
+import {HelpService} from "../../../../services/help.service";
 
 @Component({
   selector: 'siteMenu',

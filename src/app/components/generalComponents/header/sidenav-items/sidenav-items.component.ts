@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {AfterViewInit, Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {MatListItem} from "@angular/material/list";
 import {ShareableService} from "../../../../services/shareable.service";
 import {TranslateBaseService} from "../../../../app-translation/services/translation-base.service";
