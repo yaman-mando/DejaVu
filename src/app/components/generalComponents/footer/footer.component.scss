@@ -1,0 +1,16 @@
+@import "src/styles/colors";
+
+.footer{
+  background: $app-gray1;
+  padding: 50px;
+}
+
+mat-list{
+mat-list-item{
+  a{
+    font-size: 18px;
+    text-decoration: none;
+    color: $app-gray4;
+  }
+}
+}
