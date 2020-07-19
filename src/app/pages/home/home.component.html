@@ -1,3 +1,31 @@
-<slideShow [isRTL]="_Storage.getUserPreferences().langId == 2"></slideShow>
 
-<slickCategories [isRTL]="_Storage.getUserPreferences().langId == 2"></slickCategories>
+<!--slide show-->
+<slideShow [slideShowList]="getSlideShowListData()"
+           [isRTL]="_Storage.getUserPreferences().langId == 2">
+
+</slideShow>
+
+<!--category 1-->
+<p class="catTitle">{{_tb.translate.texts.category}}<span>1</span></p>
+<slickCategories [categoriesList]="getCategoryListData()"
+                 [isRTL]="_Storage.getUserPreferences().langId == 2">
+
+</slickCategories>
+
+<!--category 2-->
+<p class="catTitle">{{_tb.translate.texts.category}}<span>2</span></p>
+<slickCategories [categoriesList]="getCategoryListData()"
+                 [isRTL]="_Storage.getUserPreferences().langId == 2">
+
+</slickCategories>
+
+<!--category 3-->
+<p class="catTitle">{{_tb.translate.texts.category}}<span>3</span></p>
+<slickCategories [categoriesList]="getCategoryListData()"
+                 [isRTL]="_Storage.getUserPreferences().langId == 2">
+
+</slickCategories>
+
+
+<!--footer-->
+<footer></footer>
