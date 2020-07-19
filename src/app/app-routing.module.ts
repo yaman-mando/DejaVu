@@ -10,24 +10,30 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {path: 'home', component: HomeComponent},
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'admin',
     loadChildren: () => import('./pages/admin-panel/admin-panel.module').then(m => m.AdminPanelModule),
     canLoad: [AuthGuardService],
-    data:{
-      isLogged:true,
+    data: {
+      isLogged: true,
     }
   },
   {
     path: 'login',
-    loadChildren:() => import('./pages/login/login.module').then(m=>m.LoginModule),
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
     canLoad: [AuthGuardService],
-    data:{
-      isLogged:false,
+    data: {
+      isLogged: false,
     }
   },
-  {path: '**', redirectTo: 'home'}
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
 ];
 
 @NgModule({

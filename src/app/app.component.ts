@@ -40,6 +40,7 @@ export class AppComponent {
         return res instanceof NavigationEnd
       }))
       .subscribe(async (res: NavigationEnd) => {
+        this._helpService.setRouter(res.urlAfterRedirects);
         this._helpService.loading(false);
       });
     this.router.events
