@@ -1,0 +1,18 @@
+.app {
+  height: 100%;
+  overflow: hidden;
+}
+.admin-container-wrap {
+  height: 100%;
+}
+.admin-base-container {
+  height: calc(100% - 80px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+.admin-container{
+  padding: 2rem 0.5rem 0.5rem 0.5rem;
+}
+
+adminCategoryCard{padding: 15px}

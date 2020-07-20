@@ -1,1 +1,35 @@
-<p>admin-panel works!</p>
+<div id="main-app" class="app">
+  <mat-sidenav-container class="admin-container-wrap">
+
+    <!--sideBar-->
+    <mat-sidenav #sidenav [mode]="_shareService.adminSideBarMode"
+                 [(opened)]="_shareService.adminSideBarOpen"
+                 class="sidebar-area">
+      <adminSideBar></adminSideBar>
+    </mat-sidenav>
+
+    <!--header-->
+    <adminHeader></adminHeader>
+
+    <!--container-->
+    <div class="admin-base-container">
+      <div class="admin-container">
+
+        <!--categories cards List-->
+        <div class="cardList-cat" *ngIf="adminCatCards.catCardList as _data"
+             fxFlex="100" fxLayout="row wrapDirection"
+        >
+          <adminCategoryCard *ngFor="let catCard of _data"
+                             [cardsListData]="catCard"
+                             fxFlex.xl="25"
+                             fxFlex.lg="33" fxFlex.md="50"
+                             fxFlex.sm="50" fxFlex.xs="100"
+          >
+          </adminCategoryCard>
+        </div>
+
+      </div>
+    </div>
+
+  </mat-sidenav-container>
+</div>
