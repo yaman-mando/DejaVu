@@ -37,6 +37,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {ReactiveFormsModule} from "@angular/forms";
 import {SlickCategoriesComponent} from "./components/homeComponents/slick-categories/slick-categories.component";
 import {HelpService} from "./services/help.service";
+import {MatSelectModule} from "@angular/material/select";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -74,7 +76,9 @@ import {HelpService} from "./services/help.service";
     ReactiveFormsModule,
     MatTooltipModule,
     SlickCarouselModule,
-    BarRatingModule
+    BarRatingModule,
+    MatSelectModule,
+    MatMenuModule
   ],
   providers: [
     TranslateBaseService,
@@ -90,6 +94,8 @@ import {HelpService} from "./services/help.service";
       multi: true
     },
     HelpService
+  ],
+  exports: [
   ],
   bootstrap: [AppComponent]
 })

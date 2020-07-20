@@ -1,13 +1,21 @@
+<!--loading section-->
 <Loading *ngIf="(_helpService.loading$ |async)"></Loading>
+
+<!--data page section-->
 <ng-container *ngIf="!(_helpService.loading$ |async)">
   <mat-sidenav-container class="container">
+
+    <!--sideNav bar for website pages-->
     <mat-sidenav #sidenav mode="push" [opened]="_shareService.sidenavOpen" class="sidenav" [fixedInViewport]="true">
       <sidenav-items></sidenav-items>
     </mat-sidenav>
+
+    <!--header and pages contents section-->
     <mat-sidenav-content>
-      <appHeader></appHeader>
+      <appHeader *ngIf="(_helpService.currentRouter$ | async) != '/admin'"></appHeader>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
+
   </mat-sidenav-container>
 </ng-container>
 
