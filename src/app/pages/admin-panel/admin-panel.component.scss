@@ -1,7 +1,10 @@
+@import "src/styles/colors";
+
 .app {
   height: 100%;
   overflow: hidden;
 }
+
 .admin-container-wrap {
   height: 100%;
 }
@@ -10,9 +13,129 @@
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
-}
-.admin-container{
-  padding: 2rem 0.5rem 0.5rem 0.5rem;
+
+  .admin-container {
+    flex-direction: column !important;
+    padding: 2rem 0.5rem 0.5rem 0.5rem;
+
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+
+      .title-section {
+        p {
+          font-size: 30px
+        }
+      }
+
+      .search-section {
+        align-items: center;
+        justify-items: inherit;
+        display: flex;
+        justify-content: flex-end;
+
+        .add-button {
+          padding: 0 5px;
+
+          button {
+            background-color: #F8E6E7;
+            color: $app-red;
+            box-shadow: unset !important;
+          }
+        }
+
+        .filter-members {
+          padding: 0 5px;
+          img{
+            margin: 5px;
+          }
+        }
+
+        .search {
+          .search-input {
+            display: flex;
+            align-items: center;
+
+            span {
+              position: relative;
+              left: 30px;
+              color: black;
+            }
+          }
+
+          input {
+            background: rgba(255, 255, 255, 0.27);
+            border: 1px solid $app-light-black;
+            opacity: 0.74;
+            height: 30px;
+            border-radius: 6px;
+            color: $app-black;
+            padding-left: 2.5rem;
+            width: 100%;
+          }
+
+          input::-webkit-input-placeholder {
+            color: $app-light-black;
+          }
+
+          input:-moz-placeholder {
+            color: $app-light-black;
+          }
+        }
+      }
+    }
+
+    adminCategoryCard {
+      padding: 15px
+    }
+
+    .add-big-button {
+      button {
+        position: fixed;
+        right: 50px;
+        bottom: 30px;
+        background: $app-red;
+      }
+    }
+  }
+
+  .pagination-row {
+    padding: 15px 0;
+    text-align: center;
+    .pagination {
+      display: inline-block;
+
+      a {
+        color: black;
+        float: left;
+        width: 32px;
+        height: 32px;
+        margin: 5px;
+        text-decoration: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          &:not(.active),&:not(.arrow) {
+            background-color: #F8E6E7;
+            border-radius: 50%;
+            color: $app-red;
+          }
+        }
+
+        &.arrow{background:$app-red !important;color: white !important;}
+      }
+
+      a.active {
+        background-color: #F8E6E7;
+        color: $app-red;
+        border-radius: 50%;
+      }
+    }
+  }
+
 }
 
-adminCategoryCard{padding: 15px}
