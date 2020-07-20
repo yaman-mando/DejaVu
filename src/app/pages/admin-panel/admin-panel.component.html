@@ -89,8 +89,9 @@
             <!--search-->
             <div class="search" fxFlex="25" fxFlex.md="30" fxFlex.xl="20" fxFlex.lg="25" fxFlex.xs="100">
               <div class="search-input">
-                <span class="material-icons">search</span>
+                <span *ngIf="!_shareService.isRtl" class="material-icons">search</span>
                 <input type="text" placeholder="{{_tb.translate.texts.search}}">
+                <span *ngIf="_shareService.isRtl" class="material-icons">search</span>
               </div>
             </div>
 

@@ -11,7 +11,7 @@ import {HelpService} from "./services/help.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   host: {
-    "(window:resize)":"this._helpService.ScreenDimensions()",
+    "(window:resize)":"this._helpService.ScreenDimensions();this._helpService.checkSideBar()",
     "(window:load)":"this._helpService.ScreenDimensions()",
   }
 })
@@ -26,9 +26,11 @@ export class AppComponent{
 
 
     if (this._translateService.currentLang === 'ar') {
-      document.documentElement.dir = 'rtl'
+      document.documentElement.dir = 'rtl';
+      this._shareService.isRtl = true;
     } else {
-      document.documentElement.dir = 'ltr'
+      document.documentElement.dir = 'ltr';
+      this._shareService.isRtl = false;
     }
 
 

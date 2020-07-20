@@ -9,6 +9,7 @@ export class ShareableService {
   sidenavOpen                 : boolean = false;
   adminSideBarOpen 	          : boolean = true;
   adminSideBarMode 	          : string = sideNavMode.side ;
+  isRtl                       :boolean = false;
 
 
   constructor() { }

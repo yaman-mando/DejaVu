@@ -32,14 +32,5 @@ constructor(public _tb:TranslateBaseService,
     return this._tb.translate.static.menuItems
   }
 
-  getCurrentRoute() :string{
-     let _url:string;
-    this._help.currentRouter$.subscribe(res=>{
-       _url = res;
-    });
-    return _url
-  }
-
-
 
 }

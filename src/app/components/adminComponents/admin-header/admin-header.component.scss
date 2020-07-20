@@ -17,7 +17,7 @@
   height: 85px;
 
   .sidenav-button{
-    flex: .25;
+    flex: .15;
     button{
       background: $app-red;
     }
@@ -34,6 +34,9 @@
 
   .header-right-side{
     flex: .25;
+    @media (max-width: 1200px) {
+      flex: .4;
+    }
     @media (max-width: 900px) {
       flex: .5;
     }

@@ -20,14 +20,20 @@
         <!--search-->
         <div class="search">
           <div class="search-input">
-            <span class="material-icons">search</span>
+            <span *ngIf="!_shareService.isRtl" class="material-icons">search</span>
             <input type="text" placeholder="{{_tb.translate.texts.search}}">
+            <span *ngIf="_shareService.isRtl" class="material-icons">search</span>
           </div>
         </div>
 
         <!--notification-->
         <div class="notification">
-          <a href="javascript:;" matTooltip="{{_tb.translate.texts.notifications}}"><span class="material-icons">notifications</span></a>
+          <a fxFlex="100" fxLayoutAlign="center center"
+             href="javascript:;" style="text-decoration: none"
+             matTooltip="{{_tb.translate.texts.notifications}}"
+          >
+            <span class="material-icons">notifications</span>
+          </a>
         </div>
 
         <!--profile photo-->
@@ -56,7 +62,7 @@
             (click)="_help.logOut()"
     >
       <i class="material-icons mr-1">power_settings_new</i>
-      <span>Logout</span>
+      <span>{{_tb.translate.texts.signOut}}</span>
     </button>
   </mat-menu>
   <!--End Large Device Header-->
@@ -85,9 +91,9 @@
         <span class="material-icons material-icons-outlined">refresh</span>
       </a>
 
-      <button type="button" mat-mini-fab>
-        <i class="material-icons">search</i>
-      </button>
+      <a class="nav-link" href="javascript:;">
+        <span class="material-icons material-icons-outlined">search</span>
+      </a>
     </div>
 
   </mat-toolbar-row>

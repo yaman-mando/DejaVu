@@ -134,6 +134,7 @@ export class HelpService {
     else{
       this._shareService.adminSideBarMode = sideNavMode.side;
       this._shareService.adminSideBarOpen=true;
+      this._shareService.sidenavOpen = false;
     }
   }
 }

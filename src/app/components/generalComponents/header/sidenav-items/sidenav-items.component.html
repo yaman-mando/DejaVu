@@ -10,6 +10,7 @@
 </div>
 <mat-divider></mat-divider>
 <mat-nav-list fxLayout="column" class="navigation">
+
   <!--latest-->
     <mat-list-item>
       <a  class="relative" href="javascript:;" routerLinkActive="active-link">
@@ -38,19 +39,24 @@
       <span>{{_tb.translate.texts.lang}}</span>
     </a>
   </mat-list-item>
+
+</mat-nav-list>
 <!--Empty  line-->
   <mat-divider></mat-divider>
-  <ng-container>
 
-    <p class="part-title">{{_tb.translate.texts.Management}}</p>
+<p class="part-title">{{_tb.translate.texts.Management}}</p>
 
+<!--Management list-->
+    <mat-nav-list fxLayout="column" class="navigation">
     <mat-list-item *ngFor="let menuitem of getAdminItems()" >
       <a  class="relative" href="javascript:;" routerLinkActive="active-link">
         <mat-icon>{{ menuitem.icon }}</mat-icon>
         <span>{{ menuitem.name}}</span>
       </a>
     </mat-list-item>
-  </ng-container>
+    </mat-nav-list>
+
+<!--footer-->
   <div class="navFooter">
     <div *ngIf="!_storage.getUserPreferences().isLoggedIn">
       <a (click)="toggleSidebar()" routerLinkActive="active-link" class="red-color" mat-stroked-button [routerLink]="['/login']">
@@ -61,4 +67,3 @@
       <a class="red-color" mat-stroked-button>{{_tb.translate.texts.signOut}}</a>
     </div>
   </div>
-</mat-nav-list>
