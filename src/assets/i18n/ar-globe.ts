@@ -31,7 +31,9 @@ export const AR_GLOBE_DATA: typeof EN_GLOBE_DATA = {
     SIGNIN_SUCCESS: "تم تسجيل الدخول بنجاح",
     Management:'إدارة',
     notifications:'الإشعارات',
-    category:'التصنيف'
+    category:'التصنيف',
+    changLang:'تغيير اللغة',
+    goToSite:'الذهاب إلى الموقع'
   }
 
 };

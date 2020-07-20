@@ -31,7 +31,9 @@ export const EN_GLOBE_DATA = {
     SIGNIN_SUCCESS: "Signin successfully",
     Management:'MANAGEMENT',
     notifications:'Notifications',
-    category:'Category'
+    category:'Category',
+    changLang:'ChangeLang',
+    goToSite:'Go To Site'
   }
 
 };
