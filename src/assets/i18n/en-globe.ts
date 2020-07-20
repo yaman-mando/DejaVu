@@ -33,7 +33,10 @@ export const EN_GLOBE_DATA = {
     notifications:'Notifications',
     category:'Category',
     changLang:'ChangeLang',
-    goToSite:'Go To Site'
+    goToSite:'Go To Site',
+    members:'Members',
+    allMembers:'All Members',
+    save:'Save'
   }
 
 };

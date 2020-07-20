@@ -33,7 +33,10 @@ export const AR_GLOBE_DATA: typeof EN_GLOBE_DATA = {
     notifications:'الإشعارات',
     category:'التصنيف',
     changLang:'تغيير اللغة',
-    goToSite:'الذهاب إلى الموقع'
+    goToSite:'الذهاب إلى الموقع',
+    members:'الأعضاء',
+    allMembers:'جميع الأعضاء',
+    save:'حفظ'
   }
 
 };
