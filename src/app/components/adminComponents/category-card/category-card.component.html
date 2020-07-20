@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-content fxFlex="100" fxLayout="column">
+
+    <!--first row title-->
+    <div class="row-title" fxFlex="100" fxLayout="row">
+
+      <!--title col-->
+      <div fxFlex="80" class="part-title" fxLayout="column">
+        <div fxFlex="100" fxLayout="row">
+        <span class="material-icons">account_circle</span>
+        <span class="title">{{cardsListData.title}}</span>
+        </div>
+        <p class="items">{{cardsListData.items}}<span> Items</span></p>
+      </div>
+
+      <!--button col-->
+      <div fxFlex="20" class="part-button">
+        <div class="">
+          <button mat-mini-fab color="warn">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!--second row line-->
+    <div class="row-divider" fxFlex="100">
+    <mat-divider></mat-divider>
+    </div>
+
+    <!--third row members-->
+    <div class="row-members" *ngIf="cardsListData.members as _members" fxFlex="100" fxLayout="row wrapDirection">
+      <div fxFlex="16" *ngFor="let _member of _members">
+        <img mat-card-avatar
+             matTooltip="{{_member.name}}"
+             src="{{_member.image}}"
+             alt="{{_member.name}}"
+        />
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

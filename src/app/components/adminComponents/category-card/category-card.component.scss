@@ -1,0 +1,13 @@
+@import "src/styles/colors";
+
+.row-title{
+  .part-title{
+    .material-icons{font-size: 35px}
+    .title{padding-inline-start: 5px;font-size: 30px}
+    .items{font-size: 16px;padding-inline-start: 35px;color: $app-gray3}
+  }
+}
+
+.row-members{
+  img{margin: 10px}
+}
