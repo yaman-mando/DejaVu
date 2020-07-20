@@ -25,9 +25,16 @@
           justify-content: space-evenly;
 
           .search {
+            .search-input{
+              span{
+                position: relative;
+                left: 30px;
+                top: 7px;
+                color: black;
+              }
+            }
             input {
               background: rgba(255, 255, 255, 0.27);
-
               border: 1px solid $app-light-black;
               opacity: 0.74;
               width: 93%;
@@ -120,13 +127,5 @@
       color:$app-red;
       align-self: center;
     }
-  }
-.search-input{
-  span{
-    position: relative;
-    left: 30px;
-    top: 7px;
-    color: black;
-  }
   }
 }
