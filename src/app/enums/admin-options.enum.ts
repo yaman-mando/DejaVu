@@ -23,3 +23,11 @@ export const AdminOptionsList_AR = [
   {name:'العنصر 4', link:'admin',icon:'settings'},
 ];
 
+/**** Menu interface ****/
+export interface CategoryCardItem {
+  name: string;
+  link: string;
+  icon:string
+}
+
+
