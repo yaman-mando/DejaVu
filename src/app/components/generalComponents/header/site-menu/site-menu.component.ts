@@ -25,6 +25,7 @@ export class SiteMenuComponent{
 constructor(public _tb:TranslateBaseService,
             public _help:HelpService,
             public _appStorageService:AppStorageService) {
+
 }
   /*Method for getting menu items form Enum*/
   getMenuItems() : Menu[]{
