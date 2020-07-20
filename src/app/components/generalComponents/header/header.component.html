@@ -1,7 +1,7 @@
-<mat-toolbar color="primary" class="header">
+<mat-toolbar class="header">
 
   <!--large Devices Header -->
-  <mat-toolbar-row class="header-bottom xl main-menu-wrap">
+  <mat-toolbar-row class="header-bottom main-menu-wrap" *ngIf="_help.screenWidth > 960">
     <div class="header-bottom-inner">
 
       <!--logo-->
@@ -16,30 +16,53 @@
 
       <!--Search and Notifications side-->
       <div class="header-right-side">
+
+        <!--search-->
         <div class="search">
           <div class="search-input">
             <span class="material-icons">search</span>
             <input type="text" placeholder="{{_tb.translate.texts.search}}">
           </div>
         </div>
+
+        <!--notification-->
         <div class="notification">
           <a href="javascript:;" matTooltip="{{_tb.translate.texts.notifications}}"><span class="material-icons">notifications</span></a>
         </div>
+
+        <!--profile photo-->
         <div class="icon-logo" *ngIf="!_storage.getUserPreferences().isLoggedIn" [routerLink]="['/login']">
           <a href="javascript:;"><img src="../../../../assets/images/Icon.svg" width="25" height="25" alt=""/></a>
         </div>
         <div class="icon-logo" *ngIf="_storage.getUserPreferences().isLoggedIn">
-          <img style="border-radius: 50%" src="../../../../assets/images/yaman.jpg" matTooltip="{{_storage.getUserPreferences().userName | slice:0:15}}" width="30" height="30" alt=""/>
+
+          <a href="javascript:;" [mat-menu-trigger-for]="logout">
+          <img style="border-radius: 50%" src="../../../../assets/images/yaman.jpg"
+               matTooltip="{{_storage.getUserPreferences().userName | slice:0:15}}"
+               width="30" height="30" alt=""
+          />
+          </a>
+
         </div>
 
       </div>
 
     </div>
   </mat-toolbar-row>
+  <!--logout header menu-->
+  <mat-menu #logout="matMenu">
+    <button mat-menu-item
+            style="display: flex;align-items: center;justify-content: flex-start;"
+            (click)="_help.logOut()"
+    >
+      <i class="material-icons mr-1">power_settings_new</i>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
   <!--End Large Device Header-->
 
   <!--Mobile Header-->
-  <mat-toolbar-row class="responsive-bar header-bottom sm relative">
+  <mat-toolbar-row class="responsive-bar header-bottom relative" *ngIf="_help.screenWidth <= 960">
 
     <!--nav button-->
     <div class="nav-menu">

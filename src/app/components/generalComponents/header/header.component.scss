@@ -2,10 +2,6 @@
 
 .header {
   .header-bottom {
-    &.xl {
-      @media (max-width: 960px) {
-        display: none;
-      }
       background: $app-white;
       box-shadow: 0 3px 6px $app-shadow-black;
 
@@ -81,7 +77,7 @@
           }
         }
       }
-    }
+
   }
 
   .app-nav {
@@ -98,7 +94,6 @@
 
   //Responsive bar
   .responsive-bar{
-    @media(min-width:960px){display: none !important;}
     background: $app-white;
     display: flex;
     text-align: center;
