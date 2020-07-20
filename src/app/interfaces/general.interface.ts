@@ -23,3 +23,16 @@ export interface WI_SlideShowObject {
 export interface WI_SlideShowList {
   slidesList:WI_SlideShowObject[]
 }
+
+/*AdminCategoryCard Object Interface*/
+export interface WI_AdminCatCardObject {
+  title:string;
+  items:number;
+  members:{name: string; image:string }[]
+
+}
+
+
+export interface WI_AdminCatCardList {
+  catCardList:WI_AdminCatCardObject[]
+}
