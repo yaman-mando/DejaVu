@@ -19,7 +19,7 @@ export class AppComponent{
   title = 'DejaVu';
 
   constructor(private router: Router,
-              private _helpService:HelpService,
+              public _helpService:HelpService,
               public _shareService: ShareableService,
               private _appStorageService: AppStorageService,
               private _translateService: TranslateService) {
