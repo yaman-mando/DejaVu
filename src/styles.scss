@@ -64,6 +64,7 @@ html[dir="rtl"] {
   }
 }
 
+/*toast style*/
 .toast-warning{
   background: red !important;
   @media (max-width: 480px) {
@@ -79,4 +80,9 @@ html[dir="rtl"] {
   }
   width: 400px !important;
 }
+/*End toast style*/
 
+/*remove the scroll in admin_page*/
+.admin-page .mat-drawer-content{
+  overflow: hidden !important;
+}
