@@ -1,4 +1,4 @@
-﻿import {WI_CategoryCardList, WI_SlideShowList} from "../interfaces/general.interface";
+﻿import {WI_AdminCatCardList, WI_CategoryCardList, WI_SlideShowList} from "../interfaces/general.interface";
 
 //slideShow list data
 export const slideShowList: WI_SlideShowList = {
@@ -57,5 +57,125 @@ export const categoriesList: WI_CategoryCardList = {
         rate: 4,
       },
     ]
-  }
-;
+  };
+
+
+//Admin CategoryCardsList data
+export const adminCategoryCardsList:WI_AdminCatCardList = {
+  catCardList:[
+    {
+      title:'Title 1',
+      items:4,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'}
+        ]
+    },
+    {
+      title:'Title 2',
+      items:12,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user3.jpg'}
+      ]
+    },
+    {
+      title:'Title 3',
+      items:15,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'}
+      ]
+    },
+    {
+      title:'Title 4',
+      items:11,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'}
+      ]
+    },
+    {
+      title:'Title 4',
+      items:4,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'}
+      ]
+    },
+    {
+      title:'Title 6',
+      items:6,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'}
+      ]
+    },
+    {
+      title:'Title 7',
+      items:4,
+      members:[
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'}
+      ]
+    },
+    {
+      title:'Title 8',
+      items:5,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'}
+      ]
+    },
+    {
+      title:'Title 4',
+      items:2,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'},
+        {name:'sami',image:'../../assets/images/admin/user1.jpg'}
+      ]
+    },
+    {
+      title:'Title 18',
+      items:4,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'}
+      ]
+    },
+    {
+      title:'Title 4',
+      items:2,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'},
+        {name:'sami',image:'../../assets/images/admin/user1.jpg'}
+      ]
+    },
+    {
+      title:'Title 4',
+      items:2,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'},
+        {name:'sami',image:'../../assets/images/admin/user1.jpg'}
+      ]
+    },
+    {
+      title:'Title 4',
+      items:2,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+        {name:'fadi',image:'../../assets/images/admin/user2.jpg'},
+        {name:'sami',image:'../../assets/images/admin/user1.jpg'}
+      ]
+    },
+    {
+      title:'Title 25',
+      items:18,
+      members:[
+        {name:'ahmad',image:'../../assets/images/admin/user1.jpg'},
+      ]
+    },
+  ]
+
+};
