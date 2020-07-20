@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {ShareableService} from "./services/shareable.service";
 import {TranslateService} from "@ngx-translate/core";
 import {AppStorageService, LangListStatic} from "./app-factory/services/app-storage.service";
@@ -9,9 +9,13 @@ import {HelpService} from "./services/help.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  host: {
+    "(window:resize)":"this._helpService.ScreenDimensions()",
+    "(window:load)":"this._helpService.ScreenDimensions()",
+  }
 })
-export class AppComponent {
+export class AppComponent{
   title = 'DejaVu';
 
   constructor(private router: Router,
@@ -41,6 +45,7 @@ export class AppComponent {
       }))
       .subscribe(async (res: NavigationEnd) => {
         this._helpService.setRouter(res.urlAfterRedirects);
+        await this._helpService.ScreenDimensions();
         this._helpService.loading(false);
       });
     this.router.events
@@ -53,6 +58,5 @@ export class AppComponent {
 
 
   }
-
 
 }
