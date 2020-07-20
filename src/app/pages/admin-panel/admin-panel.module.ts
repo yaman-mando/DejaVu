@@ -19,6 +19,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {CategoryCardComponent} from "../../components/adminComponents/category-card/category-card.component";
 import {MatCardModule} from "@angular/material/card";
 import {MatTableModule} from "@angular/material/table";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 const routes: Routes = [
@@ -29,24 +30,25 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    PerfectScrollbarModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatToolbarModule,
-    FlexLayoutModule,
-    MatButtonModule,
-    MatTooltipModule,
-    FormsModule,
-    MatMenuModule,
-    MatCardModule,
-    MatTableModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        PerfectScrollbarModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatToolbarModule,
+        FlexLayoutModule,
+        MatButtonModule,
+        MatTooltipModule,
+        FormsModule,
+        MatMenuModule,
+        MatCardModule,
+        MatTableModule,
+        MatCheckboxModule
+    ],
   providers:[],
   declarations:[AdminPanelComponent,AdminSideBarComponent,AdminHeaderComponent,CategoryCardComponent]
 })
