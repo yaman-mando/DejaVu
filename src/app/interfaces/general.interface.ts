@@ -34,5 +34,6 @@ export interface WI_AdminCatCardObject {
 
 
 export interface WI_AdminCatCardList {
+  filterMembers:{name: string; image:string }[]
   catCardList:WI_AdminCatCardObject[]
 }
