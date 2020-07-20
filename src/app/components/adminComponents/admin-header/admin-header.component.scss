@@ -1,0 +1,56 @@
+@import "src/styles/colors";
+
+.list-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.user-tool {
+  button {
+    margin: 0;
+  }
+}
+
+.admin-panel-header {
+  height: 85px;
+
+  .sidenav-button{
+    flex: .25;
+    button{
+      background: $app-red;
+    }
+  }
+
+  .logo-site {
+    flex: .5;
+    text-align: center;
+    img {
+      width: auto;
+      height: 45px;
+    }
+  }
+
+  .header-right-side{
+    flex: .25;
+    @media (max-width: 900px) {
+      flex: .5;
+    }
+    @media (max-width: 550px) {
+      flex: .75;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .lang-list{flex: .5}
+    .notification{
+      flex: .2;
+      text-align: center;
+      a{font-size: 18px}
+      span{color: $app-black}
+    }
+    .icon-logo{flex: .3}
+  }
+
+}

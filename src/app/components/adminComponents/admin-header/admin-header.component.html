@@ -1,0 +1,58 @@
+<mat-toolbar class="embryo-header-toolbar admin-panel-header" fxLayoutAlign="space-between center">
+
+  <div class="sidenav-button" >
+    <button mat-mini-fab  mat-card-icon (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+
+  <div *ngIf="_help.screenWidth > 900" class="logo-site">
+      <a>
+        <img src="../../../../assets/images/Light%20Mode.svg" alt="">
+      </a>
+    <!-- log-in-user -->
+  </div>
+
+  <div class="header-right-side">
+    <!--lang-->
+    <div class="lang-list">
+        <mat-form-field>
+          <mat-select placeholder="{{_tb.translate.texts.changLang}}" (selectionChange)="_help.changeLang()">
+            <mat-option value="En" [disabled]="_storage.getUserPreferences().langId == 1">En</mat-option>
+            <mat-option value="Ar" [disabled]="_storage.getUserPreferences().langId == 2">Ar</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!--notifications-->
+    <div class="notification">
+      <a href="javascript:;" matTooltip="{{_tb.translate.texts.notifications}}"><span class="material-icons">notifications</span></a>
+    </div>
+
+    <!--user Side-->
+    <div class="icon-logo" *ngIf="!_storage.getUserPreferences().isLoggedIn" [routerLink]="['/login']">
+      <a href="javascript:;"><img src="../../../../assets/images/Icon.svg" width="40" height="40" alt=""/></a>
+    </div>
+    <div class="icon-logo" *ngIf="_storage.getUserPreferences().isLoggedIn">
+      <a href="javascript:;" [mat-menu-trigger-for]="logout">
+      <img style="border-radius: 50%"
+           src="../../../../assets/images/yaman.jpg"
+           matTooltip="{{_storage.getUserPreferences().userName | slice:0:15}}"
+           width="50" height="50" alt=""/>
+      </a>
+    </div>
+    <!--End user Side-->
+  </div>
+</mat-toolbar>
+<!--logout header menu-->
+<mat-menu #logout="matMenu">
+  <button mat-menu-item
+          style="display: flex;align-items: center;justify-content: flex-start;"
+          (click)="_help.logOut()"
+  >
+    <i class="material-icons mr-1">power_settings_new</i>
+    <span>Logout</span>
+  </button>
+</mat-menu>
+<!-- embryo-header-toolbar -->
