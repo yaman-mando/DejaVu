@@ -1,0 +1,27 @@
+<div class="sidebar-admin-panel" fxLayout="column">
+  <perfect-scrollbar class="scrollbar" [config]="config">
+    <div class="sidebar-container">
+      <div class="p-4 logo-section">
+        <img  src="../../../../assets/images/Icon.svg" width="70%" alt=""/>
+      </div>
+      <div class="mb-5 mt-3"></div>
+      <mat-list>
+      <mat-list-item (click)="active = i" *ngFor="let menuitem of getAdminItems() index as i"
+                     [ngClass]="i == active?'active':''"
+      >
+        <a  class="relative" href="javascript:;" routerLinkActive="active-link">
+          <mat-icon>{{ menuitem.icon }}</mat-icon>
+          <span>{{ menuitem.name}}</span>
+        </a>
+      </mat-list-item>
+        <mat-list-item>
+          <a  class="relative" href="javascript:;" routerLink="/home" routerLinkActive="active-link">
+            <mat-icon>home</mat-icon>
+            <span>{{ _tb.translate.texts.goToSite}}</span>
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </perfect-scrollbar>
+</div>
+<!-- sidebar-panel and embryo-sidenav -->

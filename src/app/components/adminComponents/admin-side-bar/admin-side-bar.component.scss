@@ -1,0 +1,47 @@
+@import "src/styles/colors";
+
+.sidebar-admin-panel {
+  width: 250px;
+  height: 100%;
+  background: $app-primary-bg;
+  padding: 30px 10px;
+
+  .logo-section{
+    text-align: center;
+    padding: 40px 0;
+  }
+
+mat-list {
+  mat-list-item {
+    cursor: pointer;
+    a {
+      display: flex;
+      text-transform: capitalize;
+      align-items: start;
+      justify-content: space-around;
+      text-decoration: none;
+      color: $app-light-black;
+      width: 100%;
+    }
+
+    mat-icon {
+      flex: .35;
+      text-align: start;
+      font-size: 25px;
+    }
+
+    span {
+      flex: .65;
+      text-align: start;
+      font-size: 19px;
+    }
+
+    &:hover,&.active  {
+      background: #E431381A;
+      a{
+        color: $app-red;
+      }
+    }
+  }
+}
+}
