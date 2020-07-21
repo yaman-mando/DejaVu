@@ -13,45 +13,45 @@
 
 
     <!--filter list members-->
-    <mat-menu xPosition="before" class="filter-admin-menu-members"  #filter="matMenu">
-      <div (click)="$event.stopPropagation()"  mat-card-title fxFlex="100" fxLayoutAlign="space-around center">
+    <mat-menu xPosition="before" class="filter-admin-menu-members" #filter="matMenu">
+      <div (click)="$event.stopPropagation()" mat-card-title fxFlex="100" fxLayoutAlign="space-around center">
         <h4 style="margin: 5px">{{_tb.translate.texts.members}}</h4>
         <a (click)="closeMatMenu()" href="javascript:;"><span style="color: #C9C9C9" class="material-icons">close</span></a>
       </div>
       <mat-divider></mat-divider>
 
       <div (click)="$event.stopPropagation()" mat-menu-item role="menuitemcheckbox"
-              fxFlex="100" fxLayoutAlign="space-around center"
+           fxFlex="100" fxLayoutAlign="space-around center"
       >
-          <mat-checkbox
-            #check_all
-            (click)="checkAllChoice(check_all.checked)"
-            class="example-margin"
-            checked="checked"
-            labelPosition="before">
-            <i class="material-icons mr-1">group</i>
-            {{_tb.translate.texts.allMembers}}
-          </mat-checkbox>
+        <mat-checkbox
+          #check_all
+          (click)="checkAllChoice(check_all.checked)"
+          class="example-margin"
+          checked="checked"
+          labelPosition="before">
+          <i class="material-icons mr-1">group</i>
+          {{_tb.translate.texts.allMembers}}
+        </mat-checkbox>
 
       </div>
 
       <ng-container *ngIf="adminCatCards.filterMembers as _members">
-      <div *ngFor="let member of _members" (click)="$event.stopPropagation()" mat-menu-item role="menuitemcheckbox"
-           fxFlex="100" fxLayoutAlign="space-around center"
-      >
-        <mat-checkbox
-          class="example-margin"
-          checked="checked"
-          labelPosition="before">
-          <img mat-card-avatar [src]="member.image"  alt="{{member.name}}"/>
-          {{member.name}}
-        </mat-checkbox>
+        <div *ngFor="let member of _members" (click)="$event.stopPropagation()" mat-menu-item role="menuitemcheckbox"
+             fxFlex="100" fxLayoutAlign="space-around center"
+        >
+          <mat-checkbox
+            class="example-margin"
+            checked="checked"
+            labelPosition="before">
+            <img mat-card-avatar [src]="member.image" alt="{{member.name}}"/>
+            {{member.name}}
+          </mat-checkbox>
 
-      </div>
+        </div>
       </ng-container>
 
       <div class="save-button" role="banner" fxFlex="100" fxLayoutAlign="center center">
-        <button  mat-raised-button>{{_tb.translate.texts.save}}</button>
+        <button mat-raised-button>{{_tb.translate.texts.save}}</button>
       </div>
 
 
@@ -62,13 +62,14 @@
       <div class="admin-container">
 
         <!--search bar-->
-        <div class="filter-bar" fxFlex="100" fxLayout="row wrap-direction" fxLayoutAlign="center center" >
+        <div class="filter-bar" fxFlex="100" fxLayout="row wrap-direction" fxLayoutAlign="center center">
 
           <div class="title-section" fxFlex.xs="100" fxFlex="auto" fxLayoutAlign.xs="center center">
             <p>{{_tb.translate.texts.category}}</p>
           </div>
 
-          <div class="search-section" fxLayout="row" fxLayout.xs="row wrap-direction" fxFlex.xs="100" fxFlex="auto" fxLayoutAlign.xs="center center">
+          <div class="search-section" fxLayout="row" fxLayout.xs="row wrap-direction" fxFlex.xs="100" fxFlex="auto"
+               fxLayoutAlign.xs="center center">
 
             <!--button-->
             <div class="add-button">
@@ -79,12 +80,12 @@
 
             <!--members filter-->
             <div class="filter-members" *ngIf="adminCatCards.filterMembers as _data">
-            <img *ngFor="let _member of _data"
-              mat-card-avatar
-                 matTooltip="{{_member.name}}"
-                 src="{{_member.image}}"
-                 alt="{{_member.name}}"
-            />
+              <img *ngFor="let _member of _data"
+                   mat-card-avatar
+                   matTooltip="{{_member.name}}"
+                   src="{{_member.image}}"
+                   alt="{{_member.name}}"
+              />
             </div>
 
             <!--search-->
@@ -115,32 +116,36 @@
 
         <!--Add fab button-->
         <div class="add-big-button">
-            <button mat-fab aria-label="Example icon button with a home icon">
-              <mat-icon>add</mat-icon>
-            </button>
+          <button mat-fab aria-label="Example icon button with a home icon">
+            <mat-icon>add</mat-icon>
+          </button>
         </div>
 
       </div>
 
       <!--pagination part-->
-      <div class="pagination-row" *ngIf="adminCatCards.catCardList.length>6 && adminCatCards.catCardList.length as _itemsCount">
-      <div class="pagination">
-        <a class="arrow" href="javascript:;"><</a>
-        <ng-container *ngFor="let _val of numToArray(_itemsCount) index as i">
-          <a *ngIf="i%pageSize == 0 && (i/pageSize+1) as pageNum"
-             [ngClass]="pageNum == activePage?'active':''"
-             (click)="activePage = pageNum"
-             href="javascript:;">
-            {{pageNum}}
+      <div class="pagination-row"
+           *ngIf="adminCatCards.catCardList.length>6 && adminCatCards.catCardList.length as _itemsCount">
+        <div class="pagination">
+          <a class="arrow" href="javascript:;">
+            <span class="material-icons">chevron_left</span>
           </a>
-        </ng-container>
+          <ng-container *ngFor="let _val of numToArray(_itemsCount) index as i">
+            <a *ngIf="i%pageSize == 0 && (i/pageSize+1) as pageNum"
+               [ngClass]="pageNum == activePage?'active':''"
+               (click)="activePage = pageNum"
+               href="javascript:;">
+              {{pageNum}}
+            </a>
+          </ng-container>
 
-        <a class="arrow" href="javascript:;">></a>
-      </div>
+          <a class="arrow" href="javascript:;">
+            <span class="material-icons">chevron_right</span>
+          </a>
+        </div>
       </div>
 
     </div>
-
 
 
   </mat-sidenav-container>
