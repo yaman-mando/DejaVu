@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {sideNavMode} from "../enums/general.enum";
 
 @Injectable({
@@ -6,11 +6,19 @@ import {sideNavMode} from "../enums/general.enum";
 })
 export class ShareableService {
 
-  sidenavOpen                 : boolean = false;
-  adminSideBarOpen 	          : boolean = true;
-  adminSideBarMode 	          : string = sideNavMode.side ;
-  isRtl                       :boolean = false;
+  /*sideNav case in website */
+  sidenavOpen: boolean = false;
+
+  /*Admin side bar case*/
+  adminSideBarOpen: boolean = true;
+
+  /*Admin side bar mode*/
+  adminSideBarMode: string = sideNavMode.side;
+
+  /*direction mode in project*/
+  isRtl: boolean = false;
 
 
-  constructor() { }
+  constructor() {
+  }
 }

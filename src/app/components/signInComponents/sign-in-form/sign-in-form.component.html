@@ -1,17 +1,21 @@
 <form [formGroup]="loginForm">
 
+  <!--userName input-->
   <div class="mb-4">
     <mat-form-field class="w-100">
       <input formControlName="UserName" matInput type="text" placeholder="{{_tb.translate.texts.user_name}}" required>
     </mat-form-field>
   </div>
 
+  <!--password input-->
   <div class="mb-4">
     <mat-form-field class="w-100">
-      <input formControlName="Password" matInput type="password" placeholder="{{_tb.translate.texts.password}}" required>
+      <input formControlName="Password" matInput type="password" placeholder="{{_tb.translate.texts.password}}"
+             required>
     </mat-form-field>
   </div>
 
+  <!--submit button-->
   <button [disabled]="loginForm.invalid"
           (click)="OnSubmit()"
           color="warn"
@@ -20,6 +24,8 @@
   >
     {{_tb.translate.texts.signIn}}
   </button>
+
+  <!--msg-->
   <p style="color: red;font-weight: bold">{{_tb.translate.texts.login_msg}}</p>
 
 </form>

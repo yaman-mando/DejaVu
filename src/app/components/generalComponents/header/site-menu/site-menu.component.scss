@@ -3,10 +3,12 @@
 .app-nav {
   .app-nav-list {
     padding: 0;
-    >li {
+
+    > li {
       display: inline-block;
       margin: 0 10px;
       position: relative;
+
       a {
         display: flex;
         align-items: center;
@@ -17,12 +19,15 @@
         line-height: 64px;
         padding: 0 15px;
         text-decoration: none;
-
         color: $app-light-black;
-        &:hover{
+
+        &:hover {
           color: $app-red;
         }
+
+        //when Hover on menuItem
       }
+
       &:after {
         content: '';
         border-bottom: 5px;
@@ -36,21 +41,16 @@
         position: absolute;
         bottom: 0;
       }
+
+      //line under menuItem /*no hover case*/
+
       &:hover {
         &:after {
           width: 100%;
         }
       }
-    }
-    &.xl{
-      @media (max-width: 960px)  {
-        display: none;
-      }
-    }
-    &.sm{
-      @media (min-width: 960px)  {
-        display: none;
-      }
+
+      //line under menuItem /*in hover case*/
     }
   }
 }

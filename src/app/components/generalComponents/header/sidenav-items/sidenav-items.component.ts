@@ -12,44 +12,47 @@ import {HelpService} from "../../../../services/help.service";
   templateUrl: './sidenav-items.component.html',
   styleUrls: ['./sidenav-items.component.scss']
 })
-export class SidenavItemsComponent implements OnInit,AfterViewInit {
+export class SidenavItemsComponent implements OnInit, AfterViewInit {
 
-  @ViewChildren(MatListItem) Element:QueryList<MatListItem>;
+  //**** getting All  MenuListItem *****////
+  @ViewChildren(MatListItem) Element: QueryList<MatListItem>;
 
   constructor(
-    public _tb:TranslateBaseService,
-    private _shareService:ShareableService,
-    public _help:HelpService,
-    public _storage:AppStorageService
+    public _tb: TranslateBaseService,
+    private _shareService: ShareableService,
+    public _help: HelpService,
+    public _storage: AppStorageService
   ) {
 
   }
 
   ngOnInit() {
-
   }
 
   /*Method for getting menu items form Enum*/
-  getMenuItems() : Menu[]{
+  getMenuItems(): Menu[] {
     return this._tb.translate.static.menuItems;
   }
 
   /*Method for getting Admin items form Enum*/
-  getAdminItems() : AdminOption[]{
+  getAdminItems(): AdminOption[] {
     return this._tb.translate.static.adminList;
   }
 
   /*for close sidebar*/
-  public toggleSidebar()
-  {
-    this._shareService.sidenavOpen =false;
+  public toggleSidebar() {
+    this._shareService.sidenavOpen = false;
   }
 
 
   ngAfterViewInit(): void {
-    this.Element.map(_element=>{
+
+    /*close Menu When click any MenuItem*/
+    this.Element.map(_element => {
       _element._getHostElement().addEventListener("click",
-        ()=> {this.toggleSidebar()})
+        () => {
+          this.toggleSidebar()
+        })
     })
   }
 

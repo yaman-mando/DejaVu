@@ -11,6 +11,7 @@
     <!--header-->
     <adminHeader></adminHeader>
 
+
     <!--filter list members-->
     <mat-menu xPosition="before" class="filter-admin-menu-members"  #filter="matMenu">
       <div (click)="$event.stopPropagation()"  mat-card-title fxFlex="100" fxLayoutAlign="space-around center">
@@ -124,7 +125,7 @@
       <!--pagination part-->
       <div class="pagination-row" *ngIf="adminCatCards.catCardList.length>6 && adminCatCards.catCardList.length as _itemsCount">
       <div class="pagination">
-        <a class="arrow" href="#"><</a>
+        <a class="arrow" href="javascript:;"><</a>
         <ng-container *ngFor="let _val of numToArray(_itemsCount) index as i">
           <a *ngIf="i%pageSize == 0 && (i/pageSize+1) as pageNum"
              [ngClass]="pageNum == activePage?'active':''"
@@ -134,11 +135,13 @@
           </a>
         </ng-container>
 
-        <a class="arrow" href="#">></a>
+        <a class="arrow" href="javascript:;">></a>
       </div>
       </div>
 
     </div>
+
+
 
   </mat-sidenav-container>
 </div>

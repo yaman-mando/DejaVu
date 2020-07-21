@@ -10,8 +10,10 @@ import {WI_SlideShowList} from "../../../interfaces/general.interface";
 })
 export class SlideShowComponent implements OnInit,OnChanges {
 
-  @Input() isRTL : boolean = false;
+  /*slider list data*/
   @Input() slideShowList:WI_SlideShowList;
+  @Input() isRTL : boolean = false;
+
 
   slideConfig : any;
 
@@ -21,12 +23,13 @@ export class SlideShowComponent implements OnInit,OnChanges {
   }
 
   ngOnChanges() {
+    /*slider config*/
     this.slideConfig = {
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 5000,
+      autoplay: true,
+      autoplaySpeed: 3000,
       dots: false,
       rtl: this.isRTL,
       responsive: [
@@ -37,7 +40,7 @@ export class SlideShowComponent implements OnInit,OnChanges {
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 2000
+            autoplaySpeed: 3000
           }
         },
         {
@@ -47,7 +50,7 @@ export class SlideShowComponent implements OnInit,OnChanges {
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 2000
+            autoplaySpeed: 3000
           }
         },
         {
@@ -56,8 +59,8 @@ export class SlideShowComponent implements OnInit,OnChanges {
             arrows: false,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 2000
+            autoplay: true,
+            autoplaySpeed: 3000
           }
         }
       ]

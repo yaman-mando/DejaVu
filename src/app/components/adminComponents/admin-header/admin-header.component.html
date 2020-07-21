@@ -1,28 +1,30 @@
-<mat-toolbar class="embryo-header-toolbar admin-panel-header" fxLayoutAlign="space-between center">
+<mat-toolbar class="admin-panel-header" fxLayoutAlign="space-between center">
 
-  <div class="sidenav-button" >
-    <button mat-mini-fab  mat-card-icon (click)="toggleSidebar()">
+  <!--sideNav Button-->
+  <div class="sidenav-button">
+    <button mat-mini-fab mat-card-icon (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
 
-
+  <!--logo-->
   <div *ngIf="_help.screenWidth > 900" class="logo-site">
-      <a>
-        <img src="../../../../assets/images/Light%20Mode.svg" alt="">
-      </a>
-    <!-- log-in-user -->
+    <a>
+      <img src="../../../../assets/images/Light%20Mode.svg" alt="">
+    </a>
   </div>
 
+  <!--change lang && notification && profile photo part-->
   <div class="header-right-side">
+
     <!--lang-->
     <div class="lang-list">
-        <mat-form-field>
-          <mat-select placeholder="{{_tb.translate.texts.changLang}}" (selectionChange)="_help.changeLang()">
-            <mat-option value="En" [disabled]="_storage.getUserPreferences().langId == 1">En</mat-option>
-            <mat-option value="Ar" [disabled]="_storage.getUserPreferences().langId == 2">Ar</mat-option>
-          </mat-select>
-        </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="{{_tb.translate.texts.changLang}}" (selectionChange)="_help.changeLang()">
+          <mat-option value="En" [disabled]="_storage.getUserPreferences().langId == 1">En</mat-option>
+          <mat-option value="Ar" [disabled]="_storage.getUserPreferences().langId == 2">Ar</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <!--notifications-->
@@ -31,21 +33,26 @@
     </div>
 
     <!--user Side-->
+    <!-- *** if no user is loggedIn  ***-->
     <div class="icon-logo" *ngIf="!_storage.getUserPreferences().isLoggedIn" [routerLink]="['/login']">
       <a href="javascript:;"><img src="../../../../assets/images/Icon.svg" width="40" height="40" alt=""/></a>
     </div>
+    <!-- *** if  user is loggedIn  ***-->
     <div class="icon-logo" *ngIf="_storage.getUserPreferences().isLoggedIn">
       <a href="javascript:;" [mat-menu-trigger-for]="logout">
-      <img style="border-radius: 50%"
-           src="../../../../assets/images/yaman.jpg"
-           matTooltip="{{_storage.getUserPreferences().userName | slice:0:15}}"
-           width="50" height="50" alt=""/>
+        <img style="border-radius: 50%"
+             src="../../../../assets/images/yaman.jpg"
+             matTooltip="{{_storage.getUserPreferences().userName | slice:0:15}}"
+             width="50" height="50" alt=""/>
       </a>
     </div>
-    <!--End user Side-->
+
   </div>
+
 </mat-toolbar>
-<!--logout header menu-->
+
+
+<!--logout popover menu-->
 <mat-menu #logout="matMenu">
   <button mat-menu-item
           style="display: flex;align-items: center;justify-content: flex-start;"
@@ -55,4 +62,3 @@
     <span>Logout</span>
   </button>
 </mat-menu>
-<!-- embryo-header-toolbar -->

@@ -5,25 +5,25 @@
 
   <!--card contents-->
   <div class="card-contains">
-
+    <!--card title & rating col-->
     <div class="card-title">
       <p class="card-title">{{cardItem.title}}</p>
       <bar-rating [rate]="3" [max]="5" [theme]="'stars'" [showText]="true"></bar-rating>
     </div>
 
+    <!--card buttons col-->
     <div class="card-buttons">
-      <div class="example-button-container">
+      <div class="button-container">
         <button mat-mini-fab [ngClass]="cardItem.case_icon === 'done'?'done-color':'add-color'">
           <mat-icon>{{cardItem.case_icon}}</mat-icon>
         </button>
       </div>
-      <div class="example-button-container">
+      <div class="button-container">
         <button mat-mini-fab class="add-color">
           <mat-icon>more_vert</mat-icon>
         </button>
       </div>
     </div>
-
   </div>
 
 </div>

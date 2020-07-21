@@ -28,7 +28,7 @@
 @import "styles/rtl";
 
 
-//arabic font
+/*arabic font*/
 @font-face {
   font-family: 'Noto Kufi Arabic';
   font-style: normal;
@@ -36,7 +36,6 @@
   src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot);
   src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff) format('woff'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.ttf) format('truetype')
 }
-
 @font-face {
   font-family: 'Noto Kufi Arabic';
   font-style: normal;
@@ -45,10 +44,15 @@
   src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.eot?#iefix) format('embedded-opentype'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Bold.ttf) format('truetype')
 }
 
-//end arabic font
+/*End arabic font*/
+
+/*general classes */
+html, body { height: 100%;margin: 0; }
+.red-color{
+  color: $app-red;
+}
 
 /*LTR font*/
-html, body { height: 100%;margin: 0; }
 html[dir="ltr"] {
   div,h1,h2,h3,h4,h5,h6,a,input{
     font-family: Roboto, "Helvetica Neue", sans-serif !important;
@@ -73,7 +77,6 @@ html[dir="rtl"] {
   }
   width: 400px !important;
 }
-
 .toast-success{
   background: green !important;
   @media (max-width: 480px) {
@@ -81,7 +84,7 @@ html[dir="rtl"] {
   }
   width: 400px !important;
 }
-/*End toast style*/
+
 
 /*remove the scroll in admin_page*/
 .admin-page {

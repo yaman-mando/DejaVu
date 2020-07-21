@@ -9,7 +9,9 @@ import {WI_CategoryCardObject} from "../../../interfaces/general.interface";
 })
 export class CategoryCardComponent implements OnInit {
 
+  /*cardItemData*/
   @Input() cardItem:WI_CategoryCardObject;
+
   constructor() { }
 
   ngOnInit() {

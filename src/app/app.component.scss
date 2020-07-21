@@ -1,5 +1,6 @@
 @import "./src/styles";
 
+/*container website style*/
 .container {
   position: absolute;
   left: 0;
@@ -8,6 +9,7 @@
   background: $app-primary-bg;
 }
 
+/*sideNav Style in website*/
 .sidenav {
   display: flex;
   padding: 15px 0;

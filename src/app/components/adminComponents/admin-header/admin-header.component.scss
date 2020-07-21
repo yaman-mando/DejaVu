@@ -1,21 +1,10 @@
 @import "src/styles/colors";
 
-.list-flex {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 8px 16px;
-}
-
-.user-tool {
-  button {
-    margin: 0;
-  }
-}
 
 .admin-panel-header {
   height: 85px;
 
+  /*sideNav button styles*/
   .sidenav-button{
     flex: .15;
     button{
@@ -23,6 +12,7 @@
     }
   }
 
+  /*logo section styles*/
   .logo-site {
     flex: .5;
     text-align: center;
@@ -32,6 +22,7 @@
     }
   }
 
+  /*change lang& notifications& profile styles */
   .header-right-side{
     flex: .25;
     @media (max-width: 1200px) {

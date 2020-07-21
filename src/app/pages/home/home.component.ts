@@ -20,10 +20,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  /*getting sliderShow data List*/
   getSlideShowListData():WI_SlideShowList{
     return slideShowList
   }
 
+  /*getting carousel data List*/
   getCategoryListData():WI_CategoryCardList{
     return categoriesList
   }

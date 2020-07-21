@@ -1,33 +1,42 @@
+<!--profile photo section-->
+
+<!--*** not loggedIn user case***-->
 <div class="non-user" *ngIf="!_storage.getUserPreferences().isLoggedIn">
-  <img  src="../../../../../assets/images/Icon.svg" alt=""/>
+  <img src="../../../../../assets/images/Icon.svg" alt=""/>
   <span class="red-color">DejaVu</span>
 </div>
+<!--*** loggedIn user case***-->
 <div class="user" *ngIf="_storage.getUserPreferences().isLoggedIn">
   <img src="../../../../../assets/images/yaman.jpg" alt=""/>
   <span class="red-color">{{_storage.getUserPreferences().userName |slice :0:15}}
     <span *ngIf="_storage.getUserPreferences().userName.length>15"> ...</span>
   </span>
 </div>
+
+<!--empty line-->
 <mat-divider></mat-divider>
+
+<!--menu partial-->
 <mat-nav-list fxLayout="column" class="navigation">
 
   <!--latest-->
-    <mat-list-item>
-      <a  class="relative" href="javascript:;" routerLinkActive="active-link">
-        <mat-icon>{{ getMenuItems()[0].icon }}</mat-icon>
-        <span>{{ getMenuItems()[0].name}}</span>
-      </a>
-    </mat-list-item>
-<!--home-->
   <mat-list-item>
-    <a  class="relative" [routerLink]="['/'+getMenuItems()[1].link]" routerLinkActive="active-link">
+    <a class="relative" href="javascript:;" routerLinkActive="active-link">
+      <mat-icon>{{ getMenuItems()[0].icon }}</mat-icon>
+      <span>{{ getMenuItems()[0].name}}</span>
+    </a>
+  </mat-list-item>
+  <!--home-->
+  <mat-list-item>
+    <a class="relative" [routerLink]="['/'+getMenuItems()[1].link]" routerLinkActive="active-link">
       <mat-icon>{{ getMenuItems()[1].icon }}</mat-icon>
       <span>{{ getMenuItems()[1].name}}</span>
     </a>
   </mat-list-item>
-<!--Admin-->
+  <!--Admin-->
   <mat-list-item *ngIf="_storage.getUserPreferences().isLoggedIn">
-    <a  class="relative" (click)="toggleSidebar()" [routerLink]="['/'+getMenuItems()[2].link]" routerLinkActive="active-link">
+    <a class="relative" (click)="toggleSidebar()" [routerLink]="['/'+getMenuItems()[2].link]"
+       routerLinkActive="active-link">
       <mat-icon>{{ getMenuItems()[2].icon }}</mat-icon>
       <span>{{ getMenuItems()[2].name}}</span>
     </a>
@@ -41,29 +50,36 @@
   </mat-list-item>
 
 </mat-nav-list>
-<!--Empty  line-->
-  <mat-divider></mat-divider>
 
-<p class="part-title">{{_tb.translate.texts.Management}}</p>
+<!--Empty  line-->
+<mat-divider></mat-divider>
+
+<p class="title">{{_tb.translate.texts.Management}}</p>
 
 <!--Management list-->
-    <mat-nav-list fxLayout="column" class="navigation">
-    <mat-list-item *ngFor="let menuitem of getAdminItems()" >
-      <a  class="relative" href="javascript:;" routerLinkActive="active-link">
-        <mat-icon>{{ menuitem.icon }}</mat-icon>
-        <span>{{ menuitem.name}}</span>
-      </a>
-    </mat-list-item>
-    </mat-nav-list>
+<mat-nav-list fxLayout="column" class="navigation">
+  <mat-list-item *ngFor="let menuitem of getAdminItems()">
+    <a class="relative" href="javascript:;" routerLinkActive="active-link">
+      <mat-icon>{{ menuitem.icon }}</mat-icon>
+      <span>{{ menuitem.name}}</span>
+    </a>
+  </mat-list-item>
+</mat-nav-list>
 
 <!--footer-->
-  <div class="navFooter">
-    <div *ngIf="!_storage.getUserPreferences().isLoggedIn">
-      <a (click)="toggleSidebar()" routerLinkActive="active-link" class="red-color" mat-stroked-button [routerLink]="['/login']">
-        {{_tb.translate.texts.signIn}}
-      </a>
-    </div>
-    <div (click)="_help.logOut();toggleSidebar()" *ngIf="_storage.getUserPreferences().isLoggedIn">
-      <a class="red-color" mat-stroked-button>{{_tb.translate.texts.signOut}}</a>
-    </div>
+<div class="navFooter">
+
+  <!--*** not loggedIn user case***-->
+  <div *ngIf="!_storage.getUserPreferences().isLoggedIn">
+    <a (click)="toggleSidebar()" routerLinkActive="active-link" class="red-color" mat-stroked-button
+       [routerLink]="['/login']">
+      {{_tb.translate.texts.signIn}}
+    </a>
   </div>
+
+  <!--*** loggedIn user case ***-->
+  <div (click)="_help.logOut();toggleSidebar()" *ngIf="_storage.getUserPreferences().isLoggedIn">
+    <a class="red-color" mat-stroked-button>{{_tb.translate.texts.signOut}}</a>
+  </div>
+
+</div>

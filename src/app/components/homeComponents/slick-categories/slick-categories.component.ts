@@ -10,8 +10,9 @@ import {WI_CategoryCardList} from "../../../interfaces/general.interface";
 })
 export class SlickCategoriesComponent implements OnInit, OnChanges {
 
+  /*categories List data*/
   @Input() categoriesList:WI_CategoryCardList;
-  @Input() isRTL : any;
+  @Input() isRTL : boolean;
 
   slideConfig : any;
 
@@ -21,14 +22,16 @@ export class SlickCategoriesComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+
+    /*carousel config*/
     this.slideConfig = {
       infinite: true,
       centerMode: true,
       centerPadding: '400px',
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 2000,
+      autoplay: true,
+      autoplaySpeed: 4000,
       dots: false,
       rtl: this.isRTL,
       responsive: [
@@ -40,8 +43,8 @@ export class SlickCategoriesComponent implements OnInit, OnChanges {
             centerPadding: '300px',
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 2000
+            autoplay: true,
+            autoplaySpeed: 4000
           }
         },
         {
@@ -50,10 +53,10 @@ export class SlickCategoriesComponent implements OnInit, OnChanges {
             arrows: false,
             centerMode: true,
             centerPadding: '150px',
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 2000
+            autoplay: true,
+            autoplaySpeed: 4000
           }
         },
         {
@@ -62,22 +65,22 @@ export class SlickCategoriesComponent implements OnInit, OnChanges {
             arrows: false,
             centerMode: true,
             centerPadding: '75px',
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 2000
+            autoplay: true,
+            autoplaySpeed: 4000
           }
         },
         {
-          breakpoint: 768,
+          breakpoint: 769,
           settings: {
             arrows: false,
             centerMode: false,
             centerPadding: '0',
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 2000
+            autoplay: true,
+            autoplaySpeed: 4000
           }
         },
         {
@@ -88,8 +91,8 @@ export class SlickCategoriesComponent implements OnInit, OnChanges {
             centerPadding: '0',
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 2000
+            autoplay: true,
+            autoplaySpeed: 4000
           }
         }
       ]

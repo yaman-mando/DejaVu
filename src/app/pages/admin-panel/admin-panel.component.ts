@@ -22,17 +22,22 @@ export class AdminPanelComponent implements OnInit {
 
   @ViewChildren(MatCheckbox) allCheck:QueryList<MatCheckbox>;
 
+  /*admin category cards list data*/
   adminCatCards:WI_AdminCatCardList;
 
+  /*count of data in one page*/
   pageSize:number = 6;
+  /*active page number*/
   activePage:number = 1;
+
 
   constructor(public _shareService:ShareableService,
               public _tb:TranslateBaseService,
               public _helpService:HelpService) {
 
     /*getting data from source*/
-    this.adminCatCards = adminCategoryCardsList
+    this.adminCatCards = adminCategoryCardsList;
+
   }
 
   ngOnInit() {
@@ -61,4 +66,5 @@ export class AdminPanelComponent implements OnInit {
     }
     return _arr
   }
+
 }

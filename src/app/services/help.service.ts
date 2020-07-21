@@ -6,6 +6,7 @@ import {TranslateBaseService} from "../app-translation/services/translation-base
 import {ToastrService} from "ngx-toastr";
 import {sideNavMode} from "../enums/general.enum";
 import {ShareableService} from "./shareable.service";
+import {WI_AdminCatCardList} from "../interfaces/general.interface";
 
 
 @Injectable()
@@ -34,6 +35,7 @@ export class HelpService {
 
     this.currentRouterBeh = new BehaviorSubject<string>(null);
     this.currentRouter$ = this.currentRouterBeh.asObservable();
+
   }
 
 
@@ -137,5 +139,6 @@ export class HelpService {
       this._shareService.sidenavOpen = false;
     }
   }
+
 }
 
