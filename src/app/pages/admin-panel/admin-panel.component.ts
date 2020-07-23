@@ -6,6 +6,7 @@ import {adminCategoryCardsList} from "../../data/general.data";
 import {TranslateBaseService} from "../../app-translation/services/translation-base.service";
 import {MatMenuTrigger} from "@angular/material/menu";
 import {MatCheckbox} from "@angular/material/checkbox";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Component({
   selector: 'app-admin-panel',
@@ -23,20 +24,29 @@ export class AdminPanelComponent implements OnInit {
   @ViewChildren(MatCheckbox) allCheck:QueryList<MatCheckbox>;
 
   /*admin category cards list data*/
-  adminCatCards:WI_AdminCatCardList;
+  //adminCatCards:WI_AdminCatCardList;
+
+  filterText:string;
 
   /*count of data in one page*/
   pageSize:number = 6;
   /*active page number*/
   activePage:number = 1;
 
+  private readonly adminCatBeh:BehaviorSubject<WI_AdminCatCardList>;
+  public readonly adminCat$:Observable<WI_AdminCatCardList>;
 
   constructor(public _shareService:ShareableService,
               public _tb:TranslateBaseService,
               public _helpService:HelpService) {
 
+              this.adminCatBeh=new BehaviorSubject<WI_AdminCatCardList>(null);
+              this.adminCat$ = this.adminCatBeh.asObservable();
+
     /*getting data from source*/
-    this.adminCatCards = adminCategoryCardsList;
+    //this.adminCatCards = adminCategoryCardsList;
+
+          this.adminCatBeh.next(adminCategoryCardsList);
 
   }
 
@@ -65,6 +75,25 @@ export class AdminPanelComponent implements OnInit {
       _arr.push(i);
     }
     return _arr
+  }
+
+  async Filter(){
+    let aaa:WI_AdminCatCardList;
+    console.log(adminCategoryCardsList);
+    this.adminCat$.subscribe(res=>{
+       aaa =res;
+    });
+    console.log(this.filterText);
+    if(this.filterText == ''){
+        this.adminCatBeh.next(adminCategoryCardsList);
+    }
+    else {
+         aaa.catCardList= await aaa.catCardList.filter(res => {
+          return  res.title.toLocaleLowerCase().match(this.filterText.toLocaleLowerCase());
+      });
+         console.log(aaa.catCardList);
+         this.adminCatBeh.next(aaa);
+    }
   }
 
 }

@@ -11,7 +11,7 @@
     <!--header-->
     <adminHeader></adminHeader>
 
-
+    <ng-container *ngIf="(adminCat$ | async) as adminCatCards">
     <!--filter list members-->
     <mat-menu xPosition="before" class="filter-admin-menu-members" #filter="matMenu">
       <div (click)="$event.stopPropagation()" mat-card-title fxFlex="100" fxLayoutAlign="space-around center">
@@ -59,6 +59,7 @@
 
     <!--container-->
     <div class="admin-base-container">
+
       <div class="admin-container">
 
         <!--search bar-->
@@ -92,7 +93,8 @@
             <div class="search" fxFlex="25" fxFlex.md="30" fxFlex.xl="20" fxFlex.lg="25" fxFlex.xs="100">
               <div class="search-input">
                 <span *ngIf="!_shareService.isRtl" class="material-icons">search</span>
-                <input type="text" placeholder="{{_tb.translate.texts.search}}">
+                <input [(ngModel)]="filterText" (ngModelChange)="Filter()" type="text"
+                       placeholder="{{_tb.translate.texts.search}}">
                 <span *ngIf="_shareService.isRtl" class="material-icons">search</span>
               </div>
             </div>
@@ -145,7 +147,10 @@
         </div>
       </div>
 
+
     </div>
+
+    </ng-container>
 
 
   </mat-sidenav-container>

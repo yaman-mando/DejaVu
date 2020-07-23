@@ -47,7 +47,7 @@
 /*End arabic font*/
 
 /*general classes */
-html, body { height: 100%;margin: 0; }
+html, body { height: 100%;margin: 0; *{outline: unset}}
 .red-color{
   color: $app-red;
 }

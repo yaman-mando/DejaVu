@@ -20,6 +20,10 @@ export class HelpService {
   private readonly currentRouterBeh:BehaviorSubject<string>;
   public readonly currentRouter$:Observable<string>;
 
+  private readonly ;
+
+
+
   /*for getting screen dimensions*/
   screenWidth:number;
   screenHeight:number;
@@ -63,7 +67,7 @@ export class HelpService {
       isLoggedIn:true,
       userName:_userName,
     });
-    await this._route.navigateByUrl('/home');
+    await this._route.navigateByUrl('/admin');
   }
 
   /*logout processor*/
